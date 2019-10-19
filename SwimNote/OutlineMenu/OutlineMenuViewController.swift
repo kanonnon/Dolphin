@@ -1,0 +1,133 @@
+//
+//  InputViewController.swift
+//  SwimNote
+//
+//  Created by 雨宮佳音 on 2019/08/11.
+//  Copyright © 2019 kanon. All rights reserved.
+
+//現段階で画像の保存ができないから完成させたい。わかりにくかったから名前を変えたらアプリが落ちて動かなくなってしまった。合計距離をAddMenuViewControllerで入力したメニューをもとに自動的に計算してくれたら最高。
+
+import UIKit
+import Eureka
+import ImageRow
+import FirebaseDatabase
+
+class OutlineMenuViewController: FormViewController {
+    
+    @IBOutlet weak var SaveCode: UITextField!
+    
+    var selectedImg = UIImage()
+    
+    var ref: DatabaseReference!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        
+        form +++ Section("概要")
+            <<< DateRow("date") {
+                $0.title = "日付"
+            }
+            <<< TimeInlineRow("startTime") {
+                $0.title = "開始時刻"
+            }
+            <<< TimeInlineRow("endTime") {
+                $0.title = "終了時刻"
+            }
+            <<< TextRow("place") {
+                $0.title = "場所"
+                $0.placeholder = "プールの名前を入力"
+            }
+            <<< SegmentedRow<String>("poolType") {
+                $0.options = ["短水路", "長水路"]
+                $0.title = "プールの長さ                        "
+                $0.value = "短水路"
+                }.onChange{ row in
+                    let userDefault = UserDefaults.standard
+                    userDefault.setValue(row.value, forKey: "")
+            }
+            <<< TextRow("length") {
+                $0.title = "合計距離"
+                $0.placeholder = "合計距離を入力"
+                $0.value = "m"
+        }
+        
+        form +++ ButtonRow() {
+            $0.title = "メニューの追加"
+            $0.onCellSelection { cell, row in
+                print("tapped")
+                self.performSegue(withIdentifier: "toTraining", sender: nil)
+            }
+        }
+        
+        form +++ Section("画像")
+            <<< ImageRow() {
+                $0.title = "画像"
+                $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
+                $0.value = UIImage(named: "heli")
+                $0.clearAction = .yes(style: .destructive)
+                $0.onChange { [unowned self] row in
+                    self.selectedImg = row.value!
+                }
+        }
+        
+    }
+    
+    func saveMenu() {
+        let ud = UserDefaults.standard
+        let menuName = ud.object(forKey: "menuName") ?? ""
+        let style = ud.object(forKey: "style") ?? ""
+        let detail = ud.object(forKey: "detail") ?? ""
+        let memo = ud.object(forKey: "memo") ?? ""
+        let distance = ud.object(forKey: "distance") ?? ""
+        let times = ud.object(forKey: "times") ?? ""
+        let sets = ud.object(forKey: "sets") ?? ""
+        let totalLength = ud.object(forKey: "totalLength") ?? ""
+        let circle = ud.object(forKey: "circle") ?? ""
+        let setRest = ud.object(forKey: "setRest") ?? ""
+        
+        let formValues = self.form.values()
+        let date = formValues["date"] as! Date
+        let startTime = formValues["startTime"] as! Date
+        let endTime = formValues["endTime"] as! Date
+        let place = formValues["place"] as? String
+        let poolType = formValues["poolType"] as! String
+        let length = formValues["length"] as? String
+        
+        let menu = ["date":  date.description,
+                    "startTime": startTime.description,
+                    "endTime": endTime.description,
+                    "place": place,
+                    "poolType": poolType,
+                    "length": length,
+                    "menuName": menuName,
+                    "style": style,
+                    "detail": detail,
+                    "memo": memo,
+                    "distance": distance,
+                    "times": times,
+                    "sets": sets,
+                    "totalLength": totalLength,
+                    "circle": circle,
+                    "setRest": setRest,
+                    
+                    "imageUrl": "https://www.google.com"] as [String : Any]
+        
+        self.ref.child("menu").childByAutoId().setValue(menu)
+    }
+    
+    @IBAction func save(){
+        saveMenu()
+        
+        let alertController = UIAlertController(title: "保存完了！", message:"メニューの保存が完了しました。練習記録リストに戻ります。", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+        })
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+}
+

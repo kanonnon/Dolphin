@@ -59,9 +59,9 @@ class EditMyPageViewController: FormViewController {
     func saveMyPageData() {
         let formValues = self.form.values()
         let userName = formValues["userName"] as! String
-        let selfIntroduce = formValues["selfIntroduce"] as! String
-        let S1 = formValues["S1"] as! String
-        let bestTime = formValues["bestTime"] as! String
+        let selfIntroduce = formValues["selfIntroduce"] as? String
+        let S1 = formValues["S1"] as? String
+        let bestTime = formValues["bestTime"] as? String
         
         let myPageData = ["userName": userName,
                     "selfIntroduce": selfIntroduce,

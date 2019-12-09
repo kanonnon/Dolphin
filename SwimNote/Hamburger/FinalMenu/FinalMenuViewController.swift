@@ -31,7 +31,7 @@ class FinalMenuViewController: UIViewController,UITableViewDataSource,UITableVie
         finalMenuTableView.tableFooterView = UIView()
         
         //画面をしっかり表示させる
-        finalMenuTableView.rowHeight = 72
+        finalMenuTableView.rowHeight = 64
         
         //カスタムセルの登録
         let nib = UINib(nibName: "FinalMenuTableViewCell", bundle: Bundle.main)
@@ -60,8 +60,24 @@ class FinalMenuViewController: UIViewController,UITableViewDataSource,UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "toIntroduce", sender: nil)
+        } else if indexPath.row == 4 {
+            let url = NSURL(string: "https://twitter.com/programmer_swim")
+            if UIApplication.shared.canOpenURL(url! as URL){
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+            }
+        } else if indexPath.row == 1{
+            let url = NSURL(string: "https://docs.google.com/forms/d/e/1FAIpQLSdw7XoVeVHN3ACMpav9DTUsHW8JauYGCQnIRFzuiCqzvCcF7Q/viewform")
+            if UIApplication.shared.canOpenURL(url! as URL){
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+            }
+        } else if indexPath.row == 2{
+             performSegue(withIdentifier: "toIntroduce", sender: nil)
+        } else if indexPath.row == 3{
+            performSegue(withIdentifier: "toIntroduce", sender: nil)
+        }
         
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
         
         //選択状態を解除
         tableView.deselectRow(at: indexPath, animated: true)
@@ -74,7 +90,9 @@ class FinalMenuViewController: UIViewController,UITableViewDataSource,UITableVie
         let selectedIndex = finalMenuTableView.indexPathForSelectedRow!
         introduceViewController.selectedName = finalMenu[selectedIndex.row]["name"]!
     }
- 
     
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

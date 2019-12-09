@@ -1,5 +1,5 @@
 //
-//  IntroduceViewController.swift
+//  JoinNewGroupViewController.swift
 //  SwimNote
 //
 //  Created by 雨宮佳音 on 2019/12/09.
@@ -8,22 +8,16 @@
 
 import UIKit
 
-class IntroduceViewController: UIViewController {
-    
-    var  selectedName: String = ""
-    
-    @IBOutlet var selectedNameLabel: UILabel!
+class JoinNewGroupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        selectedNameLabel.text = selectedName
 
+        // Do any additional setup after loading the view.
     }
     
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
-
 
 }

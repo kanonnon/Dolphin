@@ -5,7 +5,7 @@
 //  Created by 雨宮佳音 on 2019/08/18.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//入力するところをタップしたときに単位の後にカーソルが来てしまう。入力するときにイライラするので単位を固定させるか、カーソルが単位の前に来るようにしたい。ここで入力したデータは旦端末上のみに保存にして、練習メニューの概要を保存するときに同時にfirebaseに保存する。
+//入力するところをタップしたときに単位の後にカーソルが来てしまう。入力するときにイライラするので単位を固定させるか、カーソルが単位の前に来るようにしたい。
 
 import UIKit
 import Eureka
@@ -93,6 +93,8 @@ class AddMenuViewController: FormViewController {
         
         let ud = UserDefaults.standard
         let formValues = self.form.values()
+        
+        /*
         ud.set(formValues["menuName"] as? String, forKey: "menuName")
         ud.set(formValues["style"] as! String, forKey: "style")
         ud.set(formValues["detail"] as! String, forKey: "detail")
@@ -103,6 +105,49 @@ class AddMenuViewController: FormViewController {
         ud.set(formValues["totalLength"] as? String, forKey: "totalLength")
         ud.set(formValues["circle"] as? String, forKey: "circle")
         ud.set(formValues["setRest"] as? String, forKey: "setRest")
+         */
+        
+        // 過去にメニューが保存されていたら、過去に追加したメニューを取り出して、新しいメニューを追加
+        if var menus = ud.array(forKey: "menus") as? [Dictionary<String, String?>] {
+            let newMenu: Dictionary<String, String?> = [
+                "menuName": formValues["menuName"] as? String,
+                "style": formValues["style"] as? String,
+                "detail": formValues["detail"] as? String,
+                /*
+                "memo": formValues["memo"] as? String,
+                "distance": formValues["distance"] as? String,
+                "times": formValues["times"] as? String,
+                "sets": formValues["sets"] as? String,
+                "totalLength": formValues["totalLength"] as? String,
+                "circle": formValues["circle"] as? String,
+                "setRest": formValues["setRest"] as? String,
+                "time": formValues["time"] as? String
+ */
+            ]
+            menus.append(newMenu)
+            ud.set(menus, forKey: "menus")
+        } else {
+            // メニューが作成されていなかったら新しくめにゅー配列を作ってそれに新しいメニューを追加して保存
+            var menus = [Dictionary<String, String?>]()
+            let newMenu: Dictionary<String, String?> = [
+                "menuName": formValues["menuName"] as? String,
+                "style": formValues["style"] as? String,
+                "detail": formValues["detail"] as? String,
+                /*
+                "memo": formValues["memo"] as? String,
+                "distance": formValues["distance"] as? String,
+                "times": formValues["times"] as? String,
+                "sets": formValues["sets"] as? String,
+                "totalLength": formValues["totalLength"] as? String,
+                "circle": formValues["circle"] as? String,
+                "setRest": formValues["setRest"] as? String,
+                "time": formValues["time"] as? String
+ */
+            ]
+            menus.append(newMenu)
+            ud.set(menus, forKey: "menus")
+        }
+        
         ud.synchronize()
         
 //        let formValues = self.form.values()
@@ -138,6 +183,11 @@ class AddMenuViewController: FormViewController {
         let alertController = UIAlertController(title: "保存完了！", message:"メニューの保存が完了しました。メニューリストに戻ります。", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
             self.dismiss(animated: true, completion: nil)
+//            let formValues = self.form.values()
+//            print(formValues["menuName"] as? String)
+            let ud = UserDefaults.standard
+            print(ud.object(forKey: "menus"))
+            
         })
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)

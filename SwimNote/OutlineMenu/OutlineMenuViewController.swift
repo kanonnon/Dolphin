@@ -5,7 +5,7 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//現段階で画像の保存ができないから完成させたい。わかりにくかったから名前を変えたらアプリが落ちて動かなくなってしまった。合計距離をAddMenuViewControllerで入力したメニューをもとに自動的に計算してくれたら最高。
+//現段階で画像の保存ができないから完成させたい。合計距離をAddMenuViewControllerで入力したメニューをもとに自動的に計算して欲しい。
 
 import UIKit
 import Eureka
@@ -76,18 +76,8 @@ class OutlineMenuViewController: FormViewController {
     }
     
     func saveMenu() {
+        //TODO: - 頑張る
         let ud = UserDefaults.standard
-        let menuName = ud.object(forKey: "menuName") ?? ""
-        let style = ud.object(forKey: "style") ?? ""
-        let detail = ud.object(forKey: "detail") ?? ""
-        let memo = ud.object(forKey: "memo") ?? ""
-        let distance = ud.object(forKey: "distance") ?? ""
-        let times = ud.object(forKey: "times") ?? ""
-        let sets = ud.object(forKey: "sets") ?? ""
-        let totalLength = ud.object(forKey: "totalLength") ?? ""
-        let circle = ud.object(forKey: "circle") ?? ""
-        let setRest = ud.object(forKey: "setRest") ?? ""
-        
         let formValues = self.form.values()
         let date = formValues["date"] as! Date
         let startTime = formValues["startTime"] as! Date
@@ -96,26 +86,25 @@ class OutlineMenuViewController: FormViewController {
         let poolType = formValues["poolType"] as! String
         let length = formValues["length"] as? String
         
-        let menu = ["date":  date.description,
-                    "startTime": startTime.description,
-                    "endTime": endTime.description,
-                    "place": place,
-                    "poolType": poolType,
-                    "length": length,
-                    "menuName": menuName,
-                    "style": style,
-                    "detail": detail,
-                    "memo": memo,
-                    "distance": distance,
-                    "times": times,
-                    "sets": sets,
-                    "totalLength": totalLength,
-                    "circle": circle,
-                    "setRest": setRest,
-                    
-                    "imageUrl": "https://www.google.com"] as [String : Any]
+        if let menus = ud.array(forKey: "menus") as? [Dictionary<String, String?>] {
+            let menu = ["date":  date.description,
+                        "startTime": startTime.description,
+                        "endTime": endTime.description,
+                        "place": place,
+                        "poolType": poolType,
+                        "length": length,
+                        "menus": menus,
+                        "imageUrl": "https://www.google.com"] as [String : Any]
+            self.ref.child("menu").childByAutoId().setValue(menu)
+            
+            // TODO: - データベースへの保存が終わったら、一時保存しているメニューの削除
+            ud.removeObject(forKey: "menus")
+            ud.synchronize()
+        } else {
+            print("メニューないよ")
+        }
         
-        self.ref.child("menu").childByAutoId().setValue(menu)
+        
     }
     
     @IBAction func save(){

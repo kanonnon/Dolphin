@@ -5,9 +5,11 @@
 //  Created by 雨宮佳音 on 2019/09/15.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//ID検索をして友達を追加できるようにしたい。ID検索はリストの右上のプラスボタンから。追加した友達はHomeの画面でリストで表示する。友達のcellを押すとその人の情報（アイコン、名前、ベストタイム、IDなど）が表示され、そこに”チャットを開始”のボタンを作る。そのボタンを押してチャットを開始できるようにする。チャット上では入力した練習メニューを送れるようにしたい。
+//グループに入ってるメンバーの一覧。セルをタップするとその人のマイページが見れるようにする。
+
 
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController,UITableViewDataSource,UITabBarDelegate{
     

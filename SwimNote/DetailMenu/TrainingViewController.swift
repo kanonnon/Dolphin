@@ -5,7 +5,6 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//ユザーでふぉるつで保存させる部分を配列で保存？みたいな
 
 import UIKit
 import FirebaseDatabase
@@ -16,9 +15,7 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
     
     @IBOutlet var menuTablaView: UITableView!
     
-    var menu = [AddMenu]()
-    
-    var menuName: String = ""
+    var menus = [Dictionary<String, String?>]()
     
     var ref: DatabaseReference!
     
@@ -26,10 +23,14 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //編集
+        menuTablaView.isEditing = true
+        menuTablaView.allowsSelectionDuringEditing = true
+        
         ref = Database.database().reference()
         
         menuTablaView.dataSource = self
-        
+        menuTablaView.delegate = self
         
         
         //カスタムセルの登録
@@ -41,29 +42,30 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
         menuTablaView.tableFooterView = UIView()
         menuTablaView.rowHeight = UITableView.automaticDimension
         menuTablaView.estimatedRowHeight = 44.0
-        
+
         self.loadRecords()
-        
-        // 引っ張って更新
-        menuTablaView.bindHeadRefreshHandler({
-            self.loadRecords()
-        }, themeColor: .lightGray, refreshStyle: .native)
-        
+
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        menuTablaView.bindHeadRefreshHandler({
+            self.loadRecords()
+            self.menuTablaView.reloadData()
+        }, themeColor: .lightGray, refreshStyle: .native)
+    }
+ 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menu.count
+        return menus.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as! SampleTableViewCell
-            
         
-        cell.menuLabel.text = menu[indexPath.row].memuName
+        cell.menuLabel.text = menus[indexPath.row]["menuName"] as? String
         return cell
     }
     
@@ -74,36 +76,45 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
     func loadRecords() {
         // データベースからデータを読み込んでrecords配列に入れる。そのあと、tableViewの表示を更新。
         let ud = UserDefaults.standard
-        menuName = ud.object(forKey: "menuName") as! String
         
+        if let menus = ud.array(forKey: "menus") as? [Dictionary<String, String?>] {
+            self.menus = menus
+            //self.menuTablaView.headRefreshControl.endRefreshing()
+        } else {
+            print("メニューなし")
+        }
+        // menuName = ud.object(forKey: "menuName") as? String ?? ""
+//        style = ud.object(forKey: "style") as? String ?? ""
+//        detail = ud.object(forKey: "detail") as? String ?? ""
+//        memo = ud.object(forKey: "memo") as? String ?? ""
+//        distance = ud.object(forKey: "distance") as? String ?? ""
+//        times = ud.object(forKey: "times") as? String ?? ""
+//        sets = ud.object(forKey: "sets") as? String ?? ""
+//        totalLength = ud.object(forKey: "totalLength") as? String ?? ""
+//        circle = ud.object(forKey: "circle") as? String ?? ""
+//        setRest = ud.object(forKey: "setRest") as? String ?? ""
+//        time = ud.object(forKey: "time") as? String ?? ""
         
-//        ref.child("menu").observeSingleEvent(of: .value) { snapshot in
-//
-//            if let data = snapshot.value as? [String: [String:String]]{
-//                self.menu = [AddMenu]()
-//
-//                for (_, value) in data {
-//                    let menus = AddMenu()
-//
-//                    menus.memuName = value["menuName"]
-//                    menus.style = value["style"]
-//                    menus.detail = value["detail"]
-//                    menus.memo = value["memo"]
-//                    menus.distance = value["distance"]
-//                    menus.times = value["tims"]
-//                    menus.sets = value["sets"]
-//                    menus.totalLength = value["totalLength"]
-//                    menus.circle = value["circle"]
-//                    menus.setRest = value["setRest"]
-//                    menus.time = value["time"]
-//
-//                    self.menu.append(menus)
-//                }
-//                self.menuTablaView.reloadData()
-//
-//                self.menuTablaView.headRefreshControl.endRefreshing()
-//            }
-//        }
+        // menu.append(AddMenu(menuName: menuName, style: menuName, detail: menuName, memo: menuName, distance: menuName, times: menuName, sets: menuName, totalLength: menuName, circle: menuName, setRest: menuName, time: menuName))
+//        menu = ud.object(forKey: "menu") as! [AddMenu]
+        // print(menu.count)
+        
+    }
+    //編集
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // TODO: 入れ替え時の処理を実装する（データ制御など）
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
   
     

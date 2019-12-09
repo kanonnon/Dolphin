@@ -22,6 +22,18 @@ class AddMenu: NSObject {
         var setRest: String?
         var time: String?
     
-    
+    init(menuName: String, style: String, detail: String, memo: String, distance: String, times: String, sets: String, totalLength: String, circle: String, setRest: String, time: String) {
+         self.memuName = menuName
+         self.style = style
+         self.detail = detail
+         self.memo = memo
+         self.distance = distance
+         self.times = times
+         self.sets = sets
+         self.totalLength = totalLength
+         self.circle = circle
+         self.setRest = setRest
+         self.time = time
+    }
 
 }

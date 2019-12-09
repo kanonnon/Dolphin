@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZp-Mj-e2B">
-                        <rect key="frame" x="16" y="16" width="33" height="20"/>
+                        <rect key="frame" x="16" y="16" width="202" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="aln-Rg-zrK"/>
                         </constraints>
@@ -74,14 +74,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dateLabel" destination="YZp-Mj-e2B" id="pST-XP-nK7"/>
+                <outlet property="dateLabel" destination="YZp-Mj-e2B" id="TJ1-N8-CJ1"/>
                 <outlet property="endTimeLabel" destination="Mq5-9i-POm" id="Db5-Tp-IEB"/>
                 <outlet property="lengthLabel" destination="FhW-fY-KG2" id="iIh-LK-ecX"/>
                 <outlet property="placeLabel" destination="9Nz-Dx-bVN" id="gnq-zG-p7h"/>
                 <outlet property="poolTypeLabel" destination="Yh2-Qx-Gq5" id="HVd-XA-FEJ"/>
                 <outlet property="startTimeLabel" destination="ubj-7R-SNW" id="YTu-zx-BDm"/>
             </connections>
-            <point key="canvasLocation" x="-45" y="110"/>
+            <point key="canvasLocation" x="-46.376811594202906" y="109.82142857142857"/>
         </tableViewCell>
     </objects>
 </document>

@@ -57,22 +57,44 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell") as! RecordTableViewCell
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+        dateFormatter.locale = Locale(identifier: "ja_JP")
         
+        let date = dateFormatter.date(from: competitions[indexPath.row].date!)
         
         if let competition = competitions[indexPath.row].competition {
             cell.competitionLabel.text = competition
-            
-            
         }
+        
+        cell.dateLabel.text = date?.toFormat("yyyy年 MM月 dd日")
         cell.lengthLabel.text = competitions[indexPath.row].length
         cell.styleLabel.text = competitions[indexPath.row].style
         cell.timeLabel.text = competitions[indexPath.row].totalTime
-      print(competitions[indexPath.row].competition)
+        print(competitions[indexPath.row].competition)
         return cell
     }
-    
+    //セルがタップされた時にどのセルがタップされたかを知る、ずっと選択状態になっているのを解除する
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("cellがタップされました")
+        self.performSegue(withIdentifier: "toEdit", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //編集の画面に値を渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEdit"{
+            let editRecordViewController = segue.destination as! EditRecordViewController
+            let selectedIndex = recordListTableView.indexPathForSelectedRow!
+            editRecordViewController.selectedRecord = competitions[selectedIndex.row]
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     func loadRecords() {
@@ -111,7 +133,6 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
                 self.recordListTableView.headRefreshControl.endRefreshing()
             }
         }
-    
     
     }
 }

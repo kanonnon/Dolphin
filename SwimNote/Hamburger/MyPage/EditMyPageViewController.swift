@@ -5,7 +5,7 @@
 //  Created by 雨宮佳音 on 2019/09/19.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//変更ボタンを押したら元の画面に戻ってマイページが変更されているようにしたい。firebaseに保存するところまではできた。画像の保存はまだできない。
+//保存ボタンを押したらデータを更新したい。Atschoolなど見たが、Euerkaだと値を更新する箇所が一つじゃない（それぞれのrowがあって）から更新の仕方がわからなかった。画像の保存についてはまだ対応できていない。保存ボタンを押して元に戻ったあと通常運転してくれない（ハンバーガーメニューを開くとおかしいことがわかる）からそれをどうにかしたい。
 
 import UIKit
 import Eureka
@@ -53,21 +53,6 @@ class EditMyPageViewController: FormViewController {
                 $0.title = "ベストタイム"
                 $0.placeholder = "S1のベストタイムを編集"
                 }
-        
-        form +++ ButtonRow() {
-            $0.title = "この内容に変更"
-            $0.onCellSelection { cell, row in
-            self.navigationController?.popViewController(animated: true)
-                
-                self.saveMyPageData()
-                
-                let alertController = UIAlertController(title: "変更完了！", message:"入力された内容に変更しました。", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                })
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
                 
         }
     
@@ -87,5 +72,25 @@ class EditMyPageViewController: FormViewController {
         self.ref.child("myPageData").childByAutoId().setValue(myPageData)
     }
     
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func save(){
+        
+        self.saveMyPageData()
+        
+        let alertController = UIAlertController(title: "変更完了！", message:"入力された内容に変更しました。", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Segue") as! UITabBarController
+            //let vc = UITabBarController()
+            //vc.modalTransitionStyle = .crossDissolve
+            self.present(nextView, animated: true, completion: nil)
+        })
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+
+    }
     
 }

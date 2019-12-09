@@ -1,17 +1,18 @@
 //
-//  FriendPageTableViewCell.swift
+//  FinalMenuTableViewCell.swift
 //  SwimNote
 //
-//  Created by 雨宮佳音 on 2019/09/15.
+//  Created by 雨宮佳音 on 2019/12/09.
 //  Copyright © 2019 kanon. All rights reserved.
 //
 
 import UIKit
 
-class FriendPageTableViewCell: UITableViewCell {
+class FinalMenuTableViewCell: UITableViewCell {
     
-    @IBOutlet var friendIconImage: UIImage!
-    @IBOutlet var friendNameLabel: UILabel!
+    @IBOutlet var finalMenuView: UIImageView!
+    
+    @IBOutlet var finalMenuLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,6 @@ class FriendPageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }

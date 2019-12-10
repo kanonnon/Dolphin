@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNe-P0-jLa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fQB-1r-eOa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,7 +40,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCw-18-vO6">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCw-18-vO6" customClass="EditRecordNavigationBar" customModule="SwimNote" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.69108810750000005" green="0.9180667723" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -173,6 +173,95 @@
             </objects>
             <point key="canvasLocation" x="6065" y="-298"/>
         </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="qvf-JW-hc8">
+            <objects>
+                <viewController id="kDf-WW-WQF" customClass="SignUpViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Phz-XP-DdG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-OL-mYi">
+                                <rect key="frame" x="79" y="270" width="216" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rz7-Zl-Bwp">
+                                <rect key="frame" x="79" y="349" width="216" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OA-Ad-Udk">
+                                <rect key="frame" x="79" y="437" width="216" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69108810750000005" green="0.9180667723" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="signup:" destination="kDf-WW-WQF" eventType="touchDown" id="gMM-Q4-ZPv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DhO-vz-e2I"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="fAS-OL-mYi" id="TuT-HG-Q1e"/>
+                        <outlet property="password" destination="rz7-Zl-Bwp" id="CpC-Tx-9Ts"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLG-fO-l5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1487.2" y="-555.47226386806597"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="aS6-Am-ALC">
+            <objects>
+                <viewController id="fQB-1r-eOa" customClass="LoginViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sQr-wQ-mvd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-n6-XPn">
+                                <rect key="frame" x="79" y="180" width="216" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ni-ll-132">
+                                <rect key="frame" x="79" y="259" width="216" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfM-Km-UrY">
+                                <rect key="frame" x="79" y="347" width="216" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69108810750000005" green="0.9180667723" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="fQB-1r-eOa" eventType="touchDown" id="inZ-JS-em6"/>
+                                    <action selector="signup:" destination="kDf-WW-WQF" eventType="touchDown" id="R8K-2h-sIe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="onX-aB-iYm"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="RXf-n6-XPn" id="U8s-Y8-gVK"/>
+                        <outlet property="password" destination="9Ni-ll-132" id="V1w-wy-7Ed"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TkQ-9y-4CI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1487" y="160"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hFp-6C-XET">
             <objects>
@@ -216,7 +305,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1t-Nj-sdT">
-                                <rect key="frame" x="0.0" y="130" width="240" height="539"/>
+                                <rect key="frame" x="0.0" y="209" width="240" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -245,6 +334,17 @@
                                     <segue destination="mh6-H6-MPl" kind="presentation" id="aSQ-yS-ksd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uo-xi-B5F">
+                                <rect key="frame" x="0.0" y="137" width="240" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="　新しくグループに入る" image="icons8-ユーザグループ追加-48.png.jpg">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ibe-yM-5U2" kind="presentation" id="D7h-Rv-SPa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Vrg-fG-b0b"/>
@@ -268,11 +368,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="72" id="eZu-ey-vdh" customClass="FinalMenuTableViewCell" customModule="SwimNote" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="64" id="eZu-ey-vdh" customClass="FinalMenuTableViewCell" customModule="SwimNote" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZu-ey-vdh" id="byx-fN-rQd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -283,11 +383,15 @@
                         <viewLayoutGuide key="safeArea" id="y1x-Re-gf2"/>
                     </view>
                     <navigationItem key="navigationItem" id="Egl-3I-3nn">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="yki-GN-hoh"/>
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="yki-GN-hoh">
+                            <connections>
+                                <action selector="back" destination="h14-fr-HLP" id="uq5-bQ-wrc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="finalMenuTableView" destination="Ido-TA-V64" id="myq-Kq-OT3"/>
-                        <segue destination="WdL-Bh-cx9" kind="presentation" id="Olm-0h-wFX"/>
+                        <segue destination="WdL-Bh-cx9" kind="presentation" identifier="toIntroduce" id="Olm-0h-wFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUk-AW-Tip" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,6 +413,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVv-Mf-D8c">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="EK5-Bt-ljc">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="0pQ-Ew-VpU">
+                                            <connections>
+                                                <action selector="back" destination="WdL-Bh-cx9" id="BId-07-15V"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uxZ-Qk-Qlb"/>
@@ -567,6 +684,11 @@
                         <viewLayoutGuide key="safeArea" id="lTN-tE-cpF"/>
                     </view>
                     <navigationItem key="navigationItem" title="グラフ" id="dW7-Oo-dVP">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="1zM-cB-LJf">
+                            <connections>
+                                <action selector="back" destination="n5k-6G-lkN" id="vqz-PG-6bq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hVC-iT-lq3">
                             <connections>
                                 <segue destination="Jor-Qy-OnD" kind="show" id="jXt-Fl-5Oj"/>
@@ -593,6 +715,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjk-dg-lUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6276" y="-5071"/>
+        </scene>
+        <!--Join New Group View Controller-->
+        <scene sceneID="Yh0-mX-hqR">
+            <objects>
+                <viewController id="6Dp-T7-Fj7" customClass="JoinNewGroupViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HzT-4S-Is6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ewL-QQ-10S"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z9x-NW-ked">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="RUz-ku-Uui">
+                            <connections>
+                                <action selector="back" destination="6Dp-T7-Fj7" id="6el-J2-1cG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ece-xK-5Vo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4112.8000000000002" y="-5826.8365817091462"/>
         </scene>
         <!--グラフ-->
         <scene sceneID="sxX-QF-93W">
@@ -741,11 +885,31 @@
             </objects>
             <point key="canvasLocation" x="3173.5999999999999" y="-3563.5682158920545"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TBm-Sy-S4k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibe-yM-5U2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="haR-c3-WTU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.69108810750000005" green="0.9180667723" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Dp-T7-Fj7" kind="relationship" relationship="rootViewController" id="zDb-OZ-u3n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z5P-EH-ygc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3173.5999999999999" y="-5826.8365817091462"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icons8-ゲスト男性-48.png.png" width="24" height="24"/>
         <image name="icons8-メダル-64.png.png" width="32" height="32"/>
         <image name="icons8-メニュー2-48.png.jpg" width="24" height="24"/>
+        <image name="icons8-ユーザグループ追加-48.png.jpg" width="24" height="24"/>
         <image name="icons8-棒グラフ-24.png.png" width="12" height="12"/>
         <image name="icons8-棒グラフ-48.png.jpg" width="24" height="24"/>
         <image name="icons8-水泳-50.png.png" width="25" height="25"/>

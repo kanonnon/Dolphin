@@ -5,7 +5,7 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//詳細タイムの入力するところを泳いだ距離に応じて変えたい。ラップを計算して欲しい。現段階で画像の保存ができないからそこを完成させたい。
+//詳細タイムの入力するところを泳いだ距離に応じて変えたい。ラップを計算して欲しい。
 
 import UIKit
 import Eureka
@@ -124,17 +124,6 @@ class RecordViewController: FormViewController {
             <<< TextRow("secondRivalTime") {
                 $0.title = "タイム"
                 $0.placeholder = "ライバルのタイムを入力"
-        }
-        
-        form +++ Section("画像")
-            <<< ImageRow() {
-                $0.title = "画像"
-                $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
-                $0.value = UIImage(named: "heli")
-                $0.clearAction = .yes(style: .destructive)
-                $0.onChange { [unowned self] row in
-                self.selectedImg = row.value!
-                }
         }
 
     }

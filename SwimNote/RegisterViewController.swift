@@ -56,11 +56,7 @@ class RegisterViewController: FormViewController {
         
         let alertController = UIAlertController(title: "変更完了！", message:"入力された内容に変更しました。", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "HowToUse") as! HowToUseViewController
-            //let vc = UITabBarController()
-            //vc.modalTransitionStyle = .crossDissolve
-            self.present(nextView, animated: true, completion: nil)
+            //画面遷移のコードを書く
         })
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)

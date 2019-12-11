@@ -83,7 +83,7 @@ class EditMyPageViewController: FormViewController {
         let alertController = UIAlertController(title: "変更完了！", message:"入力された内容に変更しました。", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
             let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "Segue") as! UITabBarController
+            let nextView = storyboard.instantiateViewController(withIdentifier: "RootTabVarController") as! UITabBarController
             //let vc = UITabBarController()
             //vc.modalTransitionStyle = .crossDissolve
             self.present(nextView, animated: true, completion: nil)

@@ -43,7 +43,6 @@
 		68F0C35D23A0B8FE00822685 /* tutorialImage2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C35A23A0B8FD00822685 /* tutorialImage2.PNG */; };
 		68F0C35E23A0B8FE00822685 /* tutorialImage3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C35B23A0B8FD00822685 /* tutorialImage3.PNG */; };
 		68F0C35F23A0B8FE00822685 /* tutorialImage1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C35C23A0B8FD00822685 /* tutorialImage1.PNG */; };
-		68F0C36123A0CD9500822685 /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F0C36023A0CD9500822685 /* HowToUseViewController.swift */; };
 		68F0C37823A1070300822685 /* iTunesArtwork@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C36323A1070300822685 /* iTunesArtwork@1x.png */; };
 		68F0C37923A1070300822685 /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C36523A1070300822685 /* Icon-App-76x76@2x.png */; };
 		68F0C37A23A1070300822685 /* Icon-App-29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C36623A1070300822685 /* Icon-App-29x29@1x.png */; };
@@ -65,6 +64,7 @@
 		68F0C38B23A1070300822685 /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C37723A1070300822685 /* iTunesArtwork@3x.png */; };
 		68F0C38D23A1083B00822685 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C38C23A1083B00822685 /* Icon-App-83.5x83.5@2x.png */; };
 		68F0C38F23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C38E23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg */; };
+		68F0C39123A113EC00822685 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C39023A113EC00822685 /* SignIn.storyboard */; };
 		68F8C684239F5D6B00FFE6C5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8C683239F5D6B00FFE6C5 /* SignUpViewController.swift */; };
 		68F8C686239F735700FFE6C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8C685239F735700FFE6C5 /* LoginViewController.swift */; };
 		68F8C68C239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F8C68B239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png */; };
@@ -125,7 +125,6 @@
 		68F0C35A23A0B8FD00822685 /* tutorialImage2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialImage2.PNG; sourceTree = "<group>"; };
 		68F0C35B23A0B8FD00822685 /* tutorialImage3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialImage3.PNG; sourceTree = "<group>"; };
 		68F0C35C23A0B8FD00822685 /* tutorialImage1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialImage1.PNG; sourceTree = "<group>"; };
-		68F0C36023A0CD9500822685 /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
 		68F0C36323A1070300822685 /* iTunesArtwork@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@1x.png"; sourceTree = "<group>"; };
 		68F0C36523A1070300822685 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
 		68F0C36623A1070300822685 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
@@ -147,6 +146,7 @@
 		68F0C37723A1070300822685 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		68F0C38C23A1083B00822685 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
 		68F0C38E23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "スクリーンショット 2019-12-11 19.58.58.jpeg"; sourceTree = "<group>"; };
+		68F0C39023A113EC00822685 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		68F8C683239F5D6B00FFE6C5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		68F8C685239F735700FFE6C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		68F8C68B239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2019-12-11 0.29.10.png"; sourceTree = "<group>"; };
@@ -251,6 +251,7 @@
 				68FAF79E232E0C6600E00239 /* OutlineMenu */,
 				68FAF79F232E0C8900E00239 /* DetailMenu */,
 				68A239C523000BFA00F285F7 /* Main.storyboard */,
+				68F0C39023A113EC00822685 /* SignIn.storyboard */,
 				68A239C823000BFD00F285F7 /* Assets.xcassets */,
 				68A239CA23000BFD00F285F7 /* LaunchScreen.storyboard */,
 				68A239CD23000BFD00F285F7 /* Info.plist */,
@@ -301,7 +302,6 @@
 				68F8C683239F5D6B00FFE6C5 /* SignUpViewController.swift */,
 				68F8C685239F735700FFE6C5 /* LoginViewController.swift */,
 				68F8C68D239FF49C00FFE6C5 /* RegisterViewController.swift */,
-				68F0C36023A0CD9500822685 /* HowToUseViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -502,6 +502,7 @@
 				68A239C923000BFD00F285F7 /* Assets.xcassets in Resources */,
 				689589C3239E718300A157DD /* icons8-質問する-48.png@2x.jpg in Resources */,
 				68F0C38A23A1070300822685 /* iTunesArtwork@2x.png in Resources */,
+				68F0C39123A113EC00822685 /* SignIn.storyboard in Resources */,
 				68F0C37823A1070300822685 /* iTunesArtwork@1x.png in Resources */,
 				68F0C38823A1070300822685 /* Icon-App-29x29@2x.png in Resources */,
 				68F8C68C239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png in Resources */,
@@ -584,7 +585,6 @@
 				680FBAC323094E2900B2B097 /* SampleTableViewCell.swift in Sources */,
 				689589B9239E5A4100A157DD /* IntroduceViewController.swift in Sources */,
 				68FAF7A6232E0DB200E00239 /* GraphViewController.swift in Sources */,
-				68F0C36123A0CD9500822685 /* HowToUseViewController.swift in Sources */,
 				68F8C69423A0065000FFE6C5 /* StartViewController.swift in Sources */,
 				68A239DA2300225100F285F7 /* OutlineMenuViewController.swift in Sources */,
 				68DDF719232BD28800DAF474 /* Record.swift in Sources */,

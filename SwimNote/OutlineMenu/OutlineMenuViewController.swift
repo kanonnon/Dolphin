@@ -62,17 +62,6 @@ class OutlineMenuViewController: FormViewController {
             }
         }
         
-        form +++ Section("画像")
-            <<< ImageRow() {
-                $0.title = "画像"
-                $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
-                $0.value = UIImage(named: "heli")
-                $0.clearAction = .yes(style: .destructive)
-                $0.onChange { [unowned self] row in
-                    self.selectedImg = row.value!
-                }
-        }
-        
     }
     
     func saveMenu() {

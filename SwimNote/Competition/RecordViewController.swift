@@ -5,7 +5,7 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//詳細タイムの入力するところを泳いだ距離に応じて変えたい。ラップを計算して欲しい。
+//TODO詳細タイムの入力するところを泳いだ距離に応じて変えたい。ラップを計算して欲しい。
 
 import UIKit
 import Eureka

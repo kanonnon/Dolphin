@@ -4,7 +4,8 @@
 //
 //  Created by 雨宮佳音 on 2019/12/10.
 //  Copyright © 2019 kanon. All rights reserved.
-//
+
+//この画面でサインアップ
 
 import UIKit
 import Firebase

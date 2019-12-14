@@ -4,7 +4,10 @@
 //
 //  Created by 雨宮佳音 on 2019/11/09.
 //  Copyright © 2019 kanon. All rights reserved.
+
+//ハンバーガーメニューの画面
 //SideMenuの横幅は大体240くらい
+//TODO画面遷移
 
 import UIKit
 import SideMenu

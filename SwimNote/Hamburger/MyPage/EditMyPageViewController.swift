@@ -6,6 +6,9 @@
 //  Copyright © 2019 kanon. All rights reserved.
 
 //保存ボタンを押したらデータを更新したい。Atschoolなど見たが、Euerkaだと値を更新する箇所が一つじゃない（それぞれのrowがあって）から更新の仕方がわからなかった。画像の保存についてはまだ対応できていない。保存ボタンを押して元に戻ったあと通常運転してくれない（ハンバーガーメニューを開くとおかしいことがわかる）からそれをどうにかしたい。
+//TODO画像
+//TODOデータの更新
+
 
 import UIKit
 import Eureka
@@ -86,7 +89,9 @@ class EditMyPageViewController: FormViewController {
             let nextView = storyboard.instantiateViewController(withIdentifier: "RootTabVarController") as! UITabBarController
             //let vc = UITabBarController()
             //vc.modalTransitionStyle = .crossDissolve
-            self.present(nextView, animated: true, completion: nil)
+            self.navigationController?.pushViewController(nextView, animated: true)
+           // self.present(nextView, animated: true, completion: nil)
+            //TODO画面遷移がPushになるようにする
         })
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)

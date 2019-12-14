@@ -4,7 +4,10 @@
 //
 //  Created by 雨宮佳音 on 2019/12/11.
 //  Copyright © 2019 kanon. All rights reserved.
-//
+
+//アイコンとその他の情報の登録。ここに記載した情報はEditMyPageViewControllerで変更できるようにする。
+//TODO画像の保存ができないから必ずそこをやる
+//TODOEditMyPageViewControllerにここで入力された値を渡す。
 
 import UIKit
 import Eureka

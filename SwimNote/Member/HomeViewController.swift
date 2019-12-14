@@ -6,6 +6,7 @@
 //  Copyright © 2019 kanon. All rights reserved.
 
 //グループに入ってるメンバーの一覧。セルをタップするとその人のマイページが見れるようにする。
+//TODOグループ作れたら取り掛かる
 
 
 import UIKit

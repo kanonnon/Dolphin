@@ -15,7 +15,6 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
     
     @IBOutlet var OutlineMenuListTableView: UITableView!
 
-    
     var records = [OutlineMenu]()
     
     var ref: DatabaseReference!

@@ -4,7 +4,8 @@
 //
 //  Created by 雨宮佳音 on 2019/12/14.
 //  Copyright © 2019 kanon. All rights reserved.
-//
+
+//TODO複数選択した後にデータを渡す
 
 import UIKit
 import Firebase

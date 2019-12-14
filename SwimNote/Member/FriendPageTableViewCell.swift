@@ -6,6 +6,7 @@
 //  Copyright © 2019 kanon. All rights reserved.
 
 //HomeViewControllerでセルがタップされたらこの画面に移動。タップされた人のマイページを表示する。
+//TODO
 
 import UIKit
 

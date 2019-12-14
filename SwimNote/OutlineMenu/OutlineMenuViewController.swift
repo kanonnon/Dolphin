@@ -5,7 +5,7 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//現段階で画像の保存ができないから完成させたい。合計距離をAddMenuViewControllerで入力したメニューをもとに自動的に計算して欲しい。
+//合計距離をAddMenuViewControllerで入力したメニューをもとに自動的に計算して欲しい。
 
 import UIKit
 import Eureka

@@ -11,6 +11,9 @@ import UIKit
 class SampleTableViewCell: UITableViewCell {
     
     @IBOutlet var menuLabel: UILabel!
+    @IBOutlet var lengthLabel: UILabel!
+    @IBOutlet var timesLabel: UILabel!
+    @IBOutlet var setsLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

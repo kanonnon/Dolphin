@@ -14,7 +14,7 @@ import SwiftDate
 class CreatGraphViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var createGraphTableView: UITableView!
-    
+
     var competitions = [Record]()
     
     var ref: DatabaseReference!
@@ -22,7 +22,7 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = editButtonItem
+         navigationItem.rightBarButtonItem = editButtonItem
         
         // 複数選択を有効にする
         createGraphTableView.allowsMultipleSelectionDuringEditing = true

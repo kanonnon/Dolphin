@@ -18,16 +18,34 @@ class EditRecordViewController: FormViewController {
     
     var selectedImg = UIImage()
     
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        
         form +++ Section("")
             <<< ButtonRow("この内容に変更") { (row: ButtonRow) in
                 row.title = row.tag
                 }
                 .onCellSelection({ (cell, row) in
-                    self.dismiss(animated: true, completion: nil)
+                    //更新するコードを書く
+                   self.updateRecord()
+                    let alertController = UIAlertController(title: "変更完了！", message:"入力された内容に変更しました。", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    
                 })
         form +++ Section("概要")
+            <<< TextRow("name") {
+                $0.title = "選手氏名"
+                $0.placeholder = "選手の名前を入力"
+            }
             <<< PickerInlineRow<String>("style") { row in
                 row.title = "種目"
                 row.options = ["Fr","Ba","Br","Fly","IM"]
@@ -112,31 +130,105 @@ class EditRecordViewController: FormViewController {
                     userDefault.setValue(row.value, forKey: "")
         }
         
-        form +++ Section("ライバルのタイム")
-            <<< TextRow("firstRival") {
-                $0.title = "名前"
-                $0.placeholder = "ライバルの名前を入力"
-                $0.value = selectedRecord.firstRival
-            }
-            <<< TextRow("firstRivalTime") {
-                $0.title = "タイム"
-                $0.placeholder = "ライバルのタイムを入力"
-                $0.value = selectedRecord.firstRivalTime
-            }
-            <<< TextRow("secondRival") {
-                $0.title = "名前"
-                $0.placeholder = "ライバルの名前を入力"
-                $0.value = selectedRecord.secondRival
-            }
-            <<< TextRow("secondRivalTime") {
-                $0.title = "タイム"
-                $0.placeholder = "ライバルのタイムを入力"
-                $0.value = selectedRecord.secondRivalTime
-        }
-        
     }
 
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
-}
+    
+    
+    func updateRecord() {
+        let formValues = self.form.values()
+        let style = formValues["style"] as! String
+        let length = formValues["length"] as! String
+        let totalTime = formValues["totalTime"] as! String
+        let competition = formValues["competition"] as? String
+        let date = formValues["date"] as! Date
+        let place = formValues["place"] as? String
+        let poolType = formValues["poolType"] as! String
+        let firstTime = formValues["firstTime"] as? String
+        let secondTime = formValues["secondTime"] as? String
+        let thirdTime = formValues["thirdTime"] as? String
+        let fourthTime = formValues["fourthTime"] as? String
+        let sense = formValues["sense"] as? String
+        let motivation = formValues["motivation"] as? String
+        let physicalCondition = formValues["physicalCondition"] as? String
+        
+        
+        let menu = ["style": style,
+                    "length": length,
+                    "totalTime": totalTime,
+                    "competition": competition,
+                    "date": date.description,
+                    "place": place,
+                    "poolType": poolType,
+                    "firstTime": firstTime,
+                    "secondTime": secondTime,
+                    "thirdTime": thirdTime,
+                    "fourthTime": fourthTime,
+                    "sense": sense,
+                    "motivation": motivation,
+                    "physicalCondition": physicalCondition] as [String : Any]
+        
+        self.ref.child("competition").childByAutoId().updateChildValues(menu)
+    }
+    
+    func removeRecord() {
+        let formValues = self.form.values()
+        let style = formValues["style"] as? String
+        let length = formValues["length"] as? String
+        let totalTime = formValues["totalTime"] as? String
+        let competition = formValues["competition"] as? String
+        let date = formValues["date"] as? Date
+        let place = formValues["place"] as? String
+        let poolType = formValues["poolType"] as? String
+        let firstTime = formValues["firstTime"] as? String
+        let secondTime = formValues["secondTime"] as? String
+        let thirdTime = formValues["thirdTime"] as? String
+        let fourthTime = formValues["fourthTime"] as? String
+        let sense = formValues["sense"] as? String
+        let motivation = formValues["motivation"] as? String
+        let physicalCondition = formValues["physicalCondition"] as? String
+        
+        let menu = ["style": style,
+                    "length": length,
+                    "totalTime": totalTime,
+                    "competition": competition,
+                    "date": date?.description,
+                    "place": place,
+                    "poolType": poolType,
+                    "firstTime": firstTime,
+                    "secondTime": secondTime,
+                    "thirdTime": thirdTime,
+                    "fourthTime": fourthTime,
+                    "sense": sense,
+                    "motivation": motivation,
+                    "physicalCondition": physicalCondition] as [String : Any]
+        
+        self.ref.child("competition").childByAutoId().removeValue()
+    }
+ 
+    
+    
+    @IBAction func remove(){
+        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "保存してもいいですか？", preferredStyle:  UIAlertController.Style.alert)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.removeRecord()
+            self.navigationController?.popViewController(animated: true)
+            print("OK")
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+ 
+    
+    }

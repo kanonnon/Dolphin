@@ -1,20 +1,18 @@
 //
-//  RecordTableViewController.swift
+//  CreatGraphViewController.swift
 //  SwimNote
 //
-//  Created by 雨宮佳音 on 2019/08/25.
+//  Created by 雨宮佳音 on 2019/12/14.
 //  Copyright © 2019 kanon. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import KafkaRefresh
 import SwiftDate
 
-class RecordTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CreatGraphViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    @IBOutlet var recordListTableView: UITableView!
+    @IBOutlet var createGraphTableView: UITableView!
     
     var competitions = [Record]()
     
@@ -23,28 +21,36 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = editButtonItem
+        
+        // 複数選択を有効にする
+        createGraphTableView.allowsMultipleSelectionDuringEditing = true
+
         ref = Database.database().reference()
         
-        recordListTableView.dataSource = self
         
         //カスタムセルの登録
-        let customCell = UINib(nibName: "RecordTableViewCell", bundle: Bundle.main)
-        recordListTableView.register(customCell,forCellReuseIdentifier:"RecordTableViewCell")
+        let customCell = UINib(nibName: "CreatGraphTableViewCell", bundle: Bundle.main)
+        createGraphTableView.register(customCell,forCellReuseIdentifier:"CreatGraphTableViewCell")
         
-        recordListTableView.dataSource = self
-        recordListTableView.delegate = self
-        recordListTableView.tableFooterView = UIView()
-        recordListTableView.rowHeight = UITableView.automaticDimension
+        createGraphTableView.dataSource = self
+        createGraphTableView.delegate = self
+        createGraphTableView.tableFooterView = UIView()
+        createGraphTableView.rowHeight = UITableView.automaticDimension
         
         self.loadRecords()
         
         //引っ張って更新
-        recordListTableView.bindHeadRefreshHandler({
+        createGraphTableView.bindHeadRefreshHandler({
             self.loadRecords()
         }, themeColor: .lightGray, refreshStyle: .native)
         
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        createGraphTableView.isEditing = editing
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return competitions.count
@@ -52,10 +58,10 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-   
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell") as! RecordTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CreatGraphTableViewCell") as! CreatGraphTableViewCell
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
@@ -75,28 +81,7 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
         print(competitions[indexPath.row].competition)
         return cell
     }
-    //セルがタップされた時にどのセルがタップされたかを知る、ずっと選択状態になっているのを解除する
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toEdit", sender: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
     
-    //編集の画面に値を渡す
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEdit"{
-            let editRecordViewController = segue.destination as! EditRecordViewController
-            let selectedIndex = recordListTableView.indexPathForSelectedRow!
-            editRecordViewController.selectedRecord = competitions[selectedIndex.row]
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
     func loadRecords() {
         // データベースからデータを読み込んでrecords配列に入れる。そのあと、tableViewの表示を更新。
@@ -122,14 +107,29 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
                     record.sense = value[Record.field.sense.rawValue]
                     record.motivation = value[Record.field.motivation.rawValue]
                     record.physicalCondition = value[Record.field.physicalCondition.rawValue]
-                 
-                
+                    
+                    
                     self.competitions.append(record)
                 }
-                self.recordListTableView.reloadData()
-                self.recordListTableView.headRefreshControl.endRefreshing()
+                self.createGraphTableView.reloadData()
+                self.createGraphTableView.headRefreshControl.endRefreshing()
             }
         }
+        
+    }
     
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+
+}
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select - \(indexPath)")
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("deselect - \(indexPath)")
     }
 }

@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="大会名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-dt-Ygp">
-                        <rect key="frame" x="168" y="0.0" width="152" height="37"/>
+                        <rect key="frame" x="186" y="0.0" width="134" height="37"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjh-SX-YDx">
-                        <rect key="frame" x="0.0" y="3" width="160" height="32"/>
+                        <rect key="frame" x="73" y="2" width="129" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
@@ -53,6 +53,13 @@
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZN-1C-PF7">
+                        <rect key="frame" x="6" y="2" width="77" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -60,6 +67,7 @@
                 <outlet property="competitionLabel" destination="Zkr-dt-Ygp" id="KFz-Ys-vLc"/>
                 <outlet property="dateLabel" destination="wjh-SX-YDx" id="IVM-DI-j4l"/>
                 <outlet property="lengthLabel" destination="XZF-UR-G8w" id="sb7-Vd-fBA"/>
+                <outlet property="nameLabel" destination="bZN-1C-PF7" id="5rB-xW-6Bw"/>
                 <outlet property="styleLabel" destination="QIm-uy-16c" id="FhJ-bw-3rT"/>
                 <outlet property="timeLabel" destination="gM3-ii-MTC" id="q3U-qD-lNI"/>
             </connections>

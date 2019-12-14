@@ -1,14 +1,14 @@
 //
-//  RecordTableViewCell.swift
+//  CreatGraphTableViewCell.swift
 //  SwimNote
 //
-//  Created by 雨宮佳音 on 2019/09/13.
+//  Created by 雨宮佳音 on 2019/12/14.
 //  Copyright © 2019 kanon. All rights reserved.
 //
 
 import UIKit
 
-class RecordTableViewCell: UITableViewCell {
+class CreatGraphTableViewCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
@@ -16,7 +16,7 @@ class RecordTableViewCell: UITableViewCell {
     @IBOutlet var lengthLabel: UILabel!
     @IBOutlet var styleLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

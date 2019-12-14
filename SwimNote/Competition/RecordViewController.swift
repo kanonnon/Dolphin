@@ -30,6 +30,10 @@ class RecordViewController: FormViewController {
         
    
         form +++ Section("概要")
+            <<< TextRow("name") {
+                $0.title = "選手氏名"
+                $0.placeholder = "選手の名前を入力"
+            }
             <<< PickerInlineRow<String>("style") { row in
                 row.title = "種目"
                 row.options = ["Fr","Ba","Br","Fly","IM"]
@@ -43,7 +47,7 @@ class RecordViewController: FormViewController {
             <<< TextRow("totalTime") {
                 $0.title = "タイム"
                 $0.placeholder = "タイムを入力"
-            }
+                }
             <<< DateRow("date") {
                 $0.title = "日付"
             }
@@ -86,7 +90,6 @@ class RecordViewController: FormViewController {
             <<< SegmentedRow<String>("sense"){
                 $0.options = ["良い", "普通","悪い"]
                 $0.title = "水感覚                                "
-                $0.value = "普通"
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
@@ -94,7 +97,6 @@ class RecordViewController: FormViewController {
             <<< SegmentedRow<String>("motivation"){
                 $0.options = ["良い", "普通","悪い"]
                 $0.title = "モチベーション                  "
-                $0.value = "普通"
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
@@ -102,34 +104,17 @@ class RecordViewController: FormViewController {
             <<< SegmentedRow<String>("physicalCondition"){
                 $0.options = ["良い", "普通","悪い"]
                 $0.title = "体調                                    "
-                $0.value = "普通"
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
                 }
         
-        form +++ Section("ライバルのタイム")
-            <<< TextRow("firstRival") {
-                $0.title = "名前"
-                $0.placeholder = "ライバルの名前を入力"
-        }
-            <<< TextRow("firstRivalTime") {
-                $0.title = "タイム"
-                $0.placeholder = "ライバルのタイムを入力"
-        }
-            <<< TextRow("secondRival") {
-                $0.title = "名前"
-                $0.placeholder = "ライバルの名前を入力"
-            }
-            <<< TextRow("secondRivalTime") {
-                $0.title = "タイム"
-                $0.placeholder = "ライバルのタイムを入力"
-        }
-
+        
     }
     
     func saveRecord() {
         let formValues = self.form.values()
+        let name = formValues["name"] as! String
         let style = formValues["style"] as! String
         let length = formValues["length"] as! String
         let totalTime = formValues["totalTime"] as! String
@@ -141,16 +126,13 @@ class RecordViewController: FormViewController {
         let secondTime = formValues["secondTime"] as? String
         let thirdTime = formValues["thirdTime"] as? String
         let fourthTime = formValues["fourthTime"] as? String
-        let sense = formValues["sense"] as! String
-        let motivation = formValues["motivation"] as! String
-        let physicalCondition = formValues["physicalCondition"] as! String
-        let firstRival = formValues["firstRivalTime"] as? String
-        let firstRivalTime = formValues["firstRivalTime"] as? String
-        let secondRival = formValues["secondRival"] as? String
-        let secondRivalTime = formValues["secondRivalTime"] as? String
+        let sense = formValues["sense"] as? String
+        let motivation = formValues["motivation"] as? String
+        let physicalCondition = formValues["physicalCondition"] as? String
         
         
-        let menu = ["style": style,
+        let menu = ["name": name,
+                    "style": style,
                     "length": length,
                     "totalTime": totalTime,
                     "competition": competition,
@@ -163,11 +145,7 @@ class RecordViewController: FormViewController {
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
-                    "physicalCondition": physicalCondition,
-                    "firstRival": firstRival,
-                    "firstRivalTime": firstRivalTime,
-                    "secondRival": secondRival,
-                    "secondRivalTime": secondRivalTime] as [String : Any]
+                    "physicalCondition": physicalCondition,] as [String : Any]
             
         self.ref.child("competition").childByAutoId().setValue(menu)
     }

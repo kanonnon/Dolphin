@@ -69,9 +69,6 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("cellがタップされました")
-    }
     
     func loadRecords() {
         // データベースからデータを読み込んでrecords配列に入れる。そのあと、tableViewの表示を更新。
@@ -116,6 +113,22 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
+    
+    //セルがタップされた時にどのセルがタップされたかを知る、ずっと選択状態になっているのを解除する
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toEdit", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //編集の画面に値を渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEdit"{
+            let editDitailMenuViewController = segue.destination as! EditDitailMenuViewController
+            let selectedIndex = menuTablaView.indexPathForSelectedRow
+            editDitailMenuViewController.selectedDitailMenu = menus[(selectedIndex?.row)!]
+        }
+    }
+        
   
     
     @IBAction func back(){

@@ -81,9 +81,20 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
         cell.lengthLabel.text = records[indexPath.row].length
         return cell
     }
-
+    
+    //セルがタップされた時にどのセルがタップされたかを知る、ずっと選択状態になっているのを解除する
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("cellがタップされました")
+        self.performSegue(withIdentifier: "toEdit", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //編集の画面に値を渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEdit"{
+            let editOutlineViewController = segue.destination as! EditOutlineMenuViewController
+            let selectedIndex = OutlineMenuListTableView.indexPathForSelectedRow!
+            editOutlineViewController.selectedOutlineMenu = records[selectedIndex.row]
+        }
     }
     
     func loadRecords() {

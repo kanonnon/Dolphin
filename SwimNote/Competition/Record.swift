@@ -10,6 +10,7 @@ import UIKit
 /// 試合の記録
 class Record: NSObject {
     
+    var name: String?
     var style: String?
     var length: String?
     var totalTime: String?
@@ -24,12 +25,9 @@ class Record: NSObject {
     var sense: String?
     var motivation: String?
     var physicalCondition: String?
-    var firstRival: String?
-    var firstRivalTime: String?
-    var secondRival: String?
-    var secondRivalTime: String?
     
     enum field: String {
+        case name = "name"
         case style = "style"
         case length = "length"
         case totalTime = "totalTime"
@@ -44,10 +42,6 @@ class Record: NSObject {
         case sense = "sense"
         case motivation = "motivetion"
         case physicalCondition = "physicalCondition"
-        case firstRival = "firstRival"
-        case firstRivalTime = "firstRivalTime"
-        case secondRival = "secondRival"
-        case secondRivalTime = "secondRivalTime"
     }
 }
     

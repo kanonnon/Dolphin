@@ -45,24 +45,23 @@ class AddMenuViewController: FormViewController {
             }
             <<< TextRow("distance") {
                 $0.title = "距離"
-                $0.placeholder = "距離を入力"
-                $0.value = "m"
+                $0.placeholder = "m"
                 self.SaveCode.keyboardType = UIKeyboardType.numberPad
             }
             <<< TextRow("times") {
                 $0.title = "本数"
-                $0.placeholder = "本数を入力"
-                $0.value = "本"
+                $0.placeholder = "本"
+                self.SaveCode.keyboardType = UIKeyboardType.numberPad
             }
             <<< TextRow("sets") {
                 $0.title = "セット数"
-                $0.placeholder = "セット数を入力"
-                $0.value = "セット"
+                $0.placeholder = "セット"
+                self.SaveCode.keyboardType = UIKeyboardType.numberPad
             }
             <<< TextRow("totalLength") {
                 $0.title = "合計距離"
-                $0.placeholder = "合計距離を入力"
-                $0.value = "m"
+                $0.placeholder = "m"
+                //$0.value = 
             }
             <<< TextRow("circle") {
                 $0.title = "サークル"

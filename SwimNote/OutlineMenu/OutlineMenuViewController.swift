@@ -43,15 +43,13 @@ class OutlineMenuViewController: FormViewController {
             <<< SegmentedRow<String>("poolType") {
                 $0.options = ["短水路", "長水路"]
                 $0.title = "プールの長さ                        "
-                $0.value = "短水路"
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
             }
             <<< TextRow("length") {
                 $0.title = "合計距離"
-                $0.placeholder = "合計距離を入力"
-                $0.value = "m"
+                $0.placeholder = "m"
         }
         
         form +++ ButtonRow() {

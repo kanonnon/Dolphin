@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5663B573481F492323D98971 /* Pods_SwimNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7888F31D663FF9A86C7826 /* Pods_SwimNote.framework */; };
+		68012D2823A49BF80000D35F /* EditDitailMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2723A49BF80000D35F /* EditDitailMenuViewController.swift */; };
+		68012D2A23A4A0AA0000D35F /* CreatGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */; };
+		68012D2D23A4A61F0000D35F /* CreatGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */; };
+		68012D2E23A4A61F0000D35F /* CreatGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */; };
 		6801BADD232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */; };
 		6808E3DB239D3E83001C7A3C /* EditRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */; };
 		680FBAC02309424000B2B097 /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FBABF2309424000B2B097 /* AddMenuViewController.swift */; };
@@ -29,7 +33,6 @@
 		689589C3239E718300A157DD /* icons8-質問する-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589C2239E718300A157DD /* icons8-質問する-48.png@2x.jpg */; };
 		689589C5239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589C4239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg */; };
 		689589C8239E920A00A157DD /* JoinNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689589C7239E920A00A157DD /* JoinNewGroupViewController.swift */; };
-		689589CA239E95D800A157DD /* EditRecordNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689589C9239E95D800A157DD /* EditRecordNavigationBar.swift */; };
 		68A239C223000BFA00F285F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A239C123000BFA00F285F7 /* AppDelegate.swift */; };
 		68A239C723000BFA00F285F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A239C523000BFA00F285F7 /* Main.storyboard */; };
 		68A239C923000BFD00F285F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A239C823000BFD00F285F7 /* Assets.xcassets */; };
@@ -65,6 +68,7 @@
 		68F0C38D23A1083B00822685 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C38C23A1083B00822685 /* Icon-App-83.5x83.5@2x.png */; };
 		68F0C38F23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C38E23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg */; };
 		68F0C39123A113EC00822685 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F0C39023A113EC00822685 /* SignIn.storyboard */; };
+		68F0C39323A12A4C00822685 /* EditOutlineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F0C39223A12A4C00822685 /* EditOutlineMenuViewController.swift */; };
 		68F8C684239F5D6B00FFE6C5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8C683239F5D6B00FFE6C5 /* SignUpViewController.swift */; };
 		68F8C686239F735700FFE6C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8C685239F735700FFE6C5 /* LoginViewController.swift */; };
 		68F8C68C239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F8C68B239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png */; };
@@ -76,6 +80,7 @@
 		68FAF7A6232E0DB200E00239 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FAF7A5232E0DB200E00239 /* GraphViewController.swift */; };
 		68FAF7A8232E0DD300E00239 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FAF7A7232E0DD300E00239 /* HomeViewController.swift */; };
 		68FB02F52376868E00379D9D /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB02F42376868E00379D9D /* HamburgerViewController.swift */; };
+		68FCB5BB23A3DE56007F4915 /* EditMyPageNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FCB5BA23A3DE56007F4915 /* EditMyPageNaviViewController.swift */; };
 		68FD90702333AE1200F5EE57 /* EditMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */; };
 		68FF6E1723124D0300DFE0E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68FF6E1623124D0300DFE0E4 /* GoogleService-Info.plist */; };
 		68FF6E1923127E5D00DFE0E4 /* OutlineMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */; };
@@ -88,6 +93,10 @@
 
 /* Begin PBXFileReference section */
 		3D7888F31D663FF9A86C7826 /* Pods_SwimNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwimNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68012D2723A49BF80000D35F /* EditDitailMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDitailMenuViewController.swift; sourceTree = "<group>"; };
+		68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatGraphViewController.swift; sourceTree = "<group>"; };
+		68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatGraphTableViewCell.swift; sourceTree = "<group>"; };
+		68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatGraphTableViewCell.xib; sourceTree = "<group>"; };
 		6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ゲスト男性-48.png@2x.png"; sourceTree = "<group>"; };
 		6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewController.swift; sourceTree = "<group>"; };
 		680FBABF2309424000B2B097 /* AddMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +118,6 @@
 		689589C2239E718300A157DD /* icons8-質問する-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-質問する-48.png@2x.jpg"; sourceTree = "<group>"; };
 		689589C4239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-ユーザグループ追加-48.png@2x.jpg"; sourceTree = "<group>"; };
 		689589C7239E920A00A157DD /* JoinNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNewGroupViewController.swift; sourceTree = "<group>"; };
-		689589C9239E95D800A157DD /* EditRecordNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordNavigationBar.swift; sourceTree = "<group>"; };
 		68A239BE23000BFA00F285F7 /* SwimNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A239C123000BFA00F285F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A239C623000BFA00F285F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 		68F0C38C23A1083B00822685 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
 		68F0C38E23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "スクリーンショット 2019-12-11 19.58.58.jpeg"; sourceTree = "<group>"; };
 		68F0C39023A113EC00822685 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		68F0C39223A12A4C00822685 /* EditOutlineMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOutlineMenuViewController.swift; sourceTree = "<group>"; };
 		68F8C683239F5D6B00FFE6C5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		68F8C685239F735700FFE6C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		68F8C68B239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2019-12-11 0.29.10.png"; sourceTree = "<group>"; };
@@ -158,6 +167,7 @@
 		68FAF7A5232E0DB200E00239 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		68FAF7A7232E0DD300E00239 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		68FB02F42376868E00379D9D /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		68FCB5BA23A3DE56007F4915 /* EditMyPageNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyPageNaviViewController.swift; sourceTree = "<group>"; };
 		68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyPageViewController.swift; sourceTree = "<group>"; };
 		68FF6E1623124D0300DFE0E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenuListViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +324,7 @@
 				68FF6E1E23127F5100DFE0E4 /* OutlineMenu.swift */,
 				68FF6E1A23127E7400DFE0E4 /* OutlineMenuListTableViewCell.swift */,
 				68FF6E1B23127E7400DFE0E4 /* OutlineMenuListTableViewCell.xib */,
+				68F0C39223A12A4C00822685 /* EditOutlineMenuViewController.swift */,
 			);
 			path = OutlineMenu;
 			sourceTree = "<group>";
@@ -326,6 +337,7 @@
 				68FF6E2023129E6B00DFE0E4 /* AddMenu.swift */,
 				680FBAC123094E2900B2B097 /* SampleTableViewCell.swift */,
 				680FBAC223094E2900B2B097 /* SampleTableViewCell.xib */,
+				68012D2723A49BF80000D35F /* EditDitailMenuViewController.swift */,
 			);
 			path = DetailMenu;
 			sourceTree = "<group>";
@@ -339,7 +351,6 @@
 				68DDF714232BCC4500DAF474 /* RecordTableViewCell.swift */,
 				68DDF715232BCC4500DAF474 /* RecordTableViewCell.xib */,
 				6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */,
-				689589C9239E95D800A157DD /* EditRecordNavigationBar.swift */,
 			);
 			path = Competition;
 			sourceTree = "<group>";
@@ -373,6 +384,9 @@
 			isa = PBXGroup;
 			children = (
 				68FAF7A5232E0DB200E00239 /* GraphViewController.swift */,
+				68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */,
+				68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */,
+				68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */,
 			);
 			name = Graph;
 			path = ../Graph;
@@ -382,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */,
+				68FCB5BA23A3DE56007F4915 /* EditMyPageNaviViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -506,6 +521,7 @@
 				68F0C37823A1070300822685 /* iTunesArtwork@1x.png in Resources */,
 				68F0C38823A1070300822685 /* Icon-App-29x29@2x.png in Resources */,
 				68F8C68C239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png in Resources */,
+				68012D2E23A4A61F0000D35F /* CreatGraphTableViewCell.xib in Resources */,
 				68F0C37923A1070300822685 /* Icon-App-76x76@2x.png in Resources */,
 				68F0C37C23A1070300822685 /* Icon-App-20x20@1x.png in Resources */,
 				68F0C37E23A1070300822685 /* Icon-App-20x20@3x.png in Resources */,
@@ -569,19 +585,22 @@
 			files = (
 				68F8C68E239FF49C00FFE6C5 /* RegisterViewController.swift in Sources */,
 				68A239D623000FF800F285F7 /* RecordViewController.swift in Sources */,
+				68F0C39323A12A4C00822685 /* EditOutlineMenuViewController.swift in Sources */,
 				689589B6239E434F00A157DD /* FinalMenuTableViewCell.swift in Sources */,
-				689589CA239E95D800A157DD /* EditRecordNavigationBar.swift in Sources */,
 				68FF6E1C23127E7500DFE0E4 /* OutlineMenuListTableViewCell.swift in Sources */,
+				68012D2A23A4A0AA0000D35F /* CreatGraphViewController.swift in Sources */,
 				68F8C684239F5D6B00FFE6C5 /* SignUpViewController.swift in Sources */,
 				68FF6E2323129EC500DFE0E4 /* RecordTableViewController.swift in Sources */,
 				68DDF716232BCC4500DAF474 /* RecordTableViewCell.swift in Sources */,
 				68FF6E1923127E5D00DFE0E4 /* OutlineMenuListViewController.swift in Sources */,
 				6808E3DB239D3E83001C7A3C /* EditRecordViewController.swift in Sources */,
+				68012D2823A49BF80000D35F /* EditDitailMenuViewController.swift in Sources */,
 				689589B2239E42A100A157DD /* FinalMenuViewController.swift in Sources */,
 				68FD90702333AE1200F5EE57 /* EditMyPageViewController.swift in Sources */,
 				689589C8239E920A00A157DD /* JoinNewGroupViewController.swift in Sources */,
 				68FB02F52376868E00379D9D /* HamburgerViewController.swift in Sources */,
 				688F3270232E25580072B240 /* FriendPageTableViewCell.swift in Sources */,
+				68FCB5BB23A3DE56007F4915 /* EditMyPageNaviViewController.swift in Sources */,
 				680FBAC323094E2900B2B097 /* SampleTableViewCell.swift in Sources */,
 				689589B9239E5A4100A157DD /* IntroduceViewController.swift in Sources */,
 				68FAF7A6232E0DB200E00239 /* GraphViewController.swift in Sources */,
@@ -592,6 +611,7 @@
 				68FAF7A8232E0DD300E00239 /* HomeViewController.swift in Sources */,
 				68FF6E2123129E6B00DFE0E4 /* AddMenu.swift in Sources */,
 				68A239D423000FDC00F285F7 /* TrainingViewController.swift in Sources */,
+				68012D2D23A4A61F0000D35F /* CreatGraphTableViewCell.swift in Sources */,
 				68A239C223000BFA00F285F7 /* AppDelegate.swift in Sources */,
 				68F8C686239F735700FFE6C5 /* LoginViewController.swift in Sources */,
 				680FBAC02309424000B2B097 /* AddMenuViewController.swift in Sources */,

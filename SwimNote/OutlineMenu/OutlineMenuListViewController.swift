@@ -25,8 +25,6 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
         
         ref = Database.database().reference()
         
-        //OutlineMenuListTableView.dataSource = self
-        
         //カスタムセルの登録
         let customCell = UINib(nibName: "OutlineMenuListTableViewCell", bundle: Bundle.main)
         OutlineMenuListTableView.register(customCell,forCellReuseIdentifier:"OutlineMenuListTableViewCell")
@@ -100,22 +98,25 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
         // データベースからデータを読み込んでrecords配列に入れる。そのあと、tableViewの表示を更新。
         ref.child("menu").observeSingleEvent(of: .value) { snapshot in
             
-            if let data = snapshot.value as? [String: [String:String]]{
+//            print(snapshot.value)
+
+            if let data = snapshot.value as? [String: [String:Any]]{
+                
                 self.records = [OutlineMenu]()
                 
                 for (_, value) in data {
                     let record = OutlineMenu()
                     
-                    record.date = value["date"]
-                    record.startTime = value["startTime"]
-                    record.endTime = value["endTime"]
-                    record.place = value["place"]
-                    record.poolType = value["poolType"]
-                    record.length = value["length"]
-                    record.imageUrl = value["imageUrl"]
+                    record.date = value["date"] as! String
+                    record.startTime = value["startTime"] as! String
+                    record.endTime = value["endTime"] as! String
+                    record.place = value["place"] as! String
+                    record.poolType = value["poolType"] as! String
+                    record.length = value["length"] as! String
                     
                     self.records.append(record)
                 }
+//                self.records.sorted{}
                 self.OutlineMenuListTableView.reloadData()
                 self.OutlineMenuListTableView.headRefreshControl.endRefreshing()
             }

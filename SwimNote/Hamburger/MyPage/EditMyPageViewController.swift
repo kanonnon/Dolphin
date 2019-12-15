@@ -18,7 +18,7 @@ import FirebaseDatabase
 
 class EditMyPageViewController: FormViewController {
     
-    @IBOutlet weak var SaveCode: UITextField!
+//    @IBOutlet weak var SaveCode: UITextField!
     
     var ref: DatabaseReference!
     
@@ -86,11 +86,10 @@ class EditMyPageViewController: FormViewController {
         let alertController = UIAlertController(title: "変更完了！", message:"入力された内容に変更しました。", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
             let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "RootTabVarController") as! UITabBarController
-            //let vc = UITabBarController()
-            //vc.modalTransitionStyle = .crossDissolve
-            self.navigationController?.pushViewController(nextView, animated: true)
-           // self.present(nextView, animated: true, completion: nil)
+//            let nextView = storyboard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+//            self.navigationController?.pushViewController(nextView, animated: true)
+//            self.present(nextView, animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             //TODO画面遷移がPushになるようにする
         })
         alertController.addAction(action)

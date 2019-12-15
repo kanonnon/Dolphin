@@ -80,21 +80,6 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
         } else {
             print("メニューなし")
         }
-        // menuName = ud.object(forKey: "menuName") as? String ?? ""
-//        style = ud.object(forKey: "style") as? String ?? ""
-//        detail = ud.object(forKey: "detail") as? String ?? ""
-//        memo = ud.object(forKey: "memo") as? String ?? ""
-//        distance = ud.object(forKey: "distance") as? String ?? ""
-//        times = ud.object(forKey: "times") as? String ?? ""
-//        sets = ud.object(forKey: "sets") as? String ?? ""
-//        totalLength = ud.object(forKey: "totalLength") as? String ?? ""
-//        circle = ud.object(forKey: "circle") as? String ?? ""
-//        setRest = ud.object(forKey: "setRest") as? String ?? ""
-//        time = ud.object(forKey: "time") as? String ?? ""
-        
-        // menu.append(AddMenu(menuName: menuName, style: menuName, detail: menuName, memo: menuName, distance: menuName, times: menuName, sets: menuName, totalLength: menuName, circle: menuName, setRest: menuName, time: menuName))
-//        menu = ud.object(forKey: "menu") as! [AddMenu]
-        // print(menu.count)
         
     }
     //編集
@@ -129,8 +114,6 @@ class TrainingViewController: UIViewController, UITableViewDataSource,UITableVie
         }
     }
         
-  
-    
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }

@@ -1,0 +1,6 @@
+framework module Pods_SwimNote {
+  umbrella header "Pods-SwimNote-umbrella.h"
+
+  export *
+  module * { export * }
+}

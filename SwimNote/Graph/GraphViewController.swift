@@ -13,6 +13,7 @@ import Charts
 
 class GraphViewController: UIViewController {
     
+    //TODO: 大会のデータを取得して以下のdata配列に入れる
      let data:[Double] = [0,1,1,2,3,5,8,13]
 
     override func viewDidLoad() {
@@ -43,4 +44,6 @@ class GraphViewController: UIViewController {
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+ 
 }

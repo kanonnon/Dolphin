@@ -20,8 +20,7 @@ class RecordViewController: FormViewController {
     var ref: DatabaseReference!
     
     var selectedImg = UIImage()
-    
-   
+    var diff: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,8 @@ class RecordViewController: FormViewController {
                 row.title = "種目"
                 row.options = ["Fr","Ba","Br","Fly","IM"]
                 row.value = row.options.first
-                }.onChange {[unowned self] row in}
+            }.onChange {[unowned self] row in}
+            
             <<< PickerInlineRow<String>("length") { row in
                 row.title = "距離"
                 row.options = ["25m","50m","100m","200m","400m","800m","1500m"]
@@ -47,7 +47,7 @@ class RecordViewController: FormViewController {
             <<< TextRow("totalTime") {
                 $0.title = "タイム"
                 $0.placeholder = "タイムを入力"
-                }
+            }
             <<< DateRow("date") {
                 $0.title = "日付"
             }
@@ -68,22 +68,85 @@ class RecordViewController: FormViewController {
                     userDefault.setValue(row.value, forKey: "")
             }
         form +++ Section("タイム詳細")
+            <<< TextRow("reactionTime") {
+                $0.title = "ﾘｱｸｼｮﾝﾀｲﾑ"
+                $0.placeholder = "ﾘｱｸｼｮﾝﾀｲﾑを入力"
+            }
             <<< TextRow("firstTime") {
                 $0.title = "50m"
                 $0.placeholder = "50mのタイムを入力"
-                }
+                }.onChange({ (row) in
+                    if let timeValue = row.value?.components(separatedBy: ".") {
+                        print(timeValue)
+                        if timeValue.count > 2 {
+                            print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
+                        }
+                    }
+                })
+            
             <<< TextRow("secondTime") {
                 $0.title = "100m"
                 $0.placeholder = "100mのタイムを入力"
-                }
+                }.onChange({ (row) in
+                    if let timeValue = row.value?.components(separatedBy: ".") {
+                        print(timeValue)
+                        if timeValue.count > 2 {
+                            print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])                        }
+                    }
+                    self.form.rowBy(tag: "thridRap")?.value = self.calcDiff()
+                    self.form.rowBy(tag: "thridRap")?.reload()
+                })
+            
+            <<< TextRow("firstRap") {
+                $0.title = "ラップ"
+                $0.value = ""
+                $0.disabled = true
+                }.onCellSelection({ (cell, row) in
+                    print("tap!!!!!!")
+                    
+                })
+            
             <<< TextRow("thirdTime") {
                 $0.title = "150m"
                 $0.placeholder = "150mのタイムを入力"
-                }
+                }.onChange({ (row) in
+                    if let timeValue = row.value?.components(separatedBy: ".") {
+                        print(timeValue)
+                        if timeValue.count > 2 {
+                            print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
+                        }
+                    }
+                    self.form.rowBy(tag: "thridRap")?.value = self.calcDiff()
+                    self.form.rowBy(tag: "thridRap")?.reload()
+                })
+            <<< TextRow("secondRap") {
+                $0.title = "ラップ"
+                $0.disabled = true
+                }.onCellSelection({ (cell, row) in
+                    print("tap!!!!!!")
+                })
             <<< TextRow("fourthTime") {
                 $0.title = "200m"
                 $0.placeholder = "200mのタイムを入力"
-                }
+                }.onChange({ (row) in
+                    if let timeValue = row.value?.components(separatedBy: ".") {
+                        print(timeValue)
+                        if timeValue.count > 2 {
+                            print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
+                        }
+                    }
+                    self.form.rowBy(tag: "thridRap")?.value = self.calcDiff()
+                    self.form.rowBy(tag: "thridRap")?.reload()
+                })
+            <<< TextRow("thridRap") {
+                $0.title = "ラップ"
+                //$0.disabled = true
+                }.onCellSelection({ (cell, row) in
+                    print("tap!!!!!!")
+                    
+                    //row.reload()
+                })
+
         
         
         form +++ Section("コンディション")
@@ -109,7 +172,62 @@ class RecordViewController: FormViewController {
                     userDefault.setValue(row.value, forKey: "")
                 }
         
+    }
+    
+    func calcDiff() -> String {
+        let formValues = self.form.values()
+        let thirdTime = formValues["thirdTime"] as? String
+        let fourthTime = formValues["fourthTime"] as? String
         
+        // fourth - third
+        var f_min = 0
+        var f_sec = 0
+        var f_msec = 0
+        if let fourthTimeValue = fourthTime?.components(separatedBy: ".") {
+            if fourthTimeValue.count > 2 {
+                if let f_min_v = Int(fourthTimeValue[0]) {
+                    f_min = f_min_v
+                }
+                if let f_sec_v = Int(fourthTimeValue[1]) {
+                    f_sec = f_sec_v
+                }
+                if let f_msec_v = Int(fourthTimeValue[2]) {
+                    f_msec = f_msec_v
+                }
+            }
+        }
+        
+        var t_min = 0
+        var t_sec = 0
+        var t_msec = 0
+        if let thirdTimeValue = thirdTime?.components(separatedBy: ".") {
+            if thirdTimeValue.count > 2 {
+                if let t_min_v = Int(thirdTimeValue[0]) {
+                    t_min = t_min_v
+                }
+                if let t_sec_v = Int(thirdTimeValue[1]) {
+                    t_sec = t_sec_v
+                }
+                if let t_msec_v = Int(thirdTimeValue[2]) {
+                    t_msec = t_msec_v
+                }
+            }
+        }
+        
+        let rap_min = 6000*f_min - 6000*t_min
+        let rap_sec = 100*f_sec - 100*t_sec
+        let rap_msec = f_msec - t_msec
+        
+        print("\(rap_min)分\(rap_sec)秒\(rap_msec)")
+        
+        let total_msec = (rap_min)+(rap_sec)+(rap_msec)
+        func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
+            return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+        }
+        let result = "\(total_msec / 6000).\((total_msec % 6000) / 60).\((total_msec % 6000) % 100)"
+        
+        print(total_msec / 6000, (total_msec % 6000) / 60, (total_msec % 6000) % 100)
+        return result
     }
     
     func saveRecord() {
@@ -122,14 +240,17 @@ class RecordViewController: FormViewController {
         let date = formValues["date"] as! Date
         let place = formValues["place"] as? String
         let poolType = formValues["poolType"] as! String
+        let reactionTime = formValues["reactionTime"] as? String
         let firstTime = formValues["firstTime"] as? String
+        let firstRap = formValues["firstRap"] as? String
         let secondTime = formValues["secondTime"] as? String
+        let secondRap = formValues["secondRap"] as? String
         let thirdTime = formValues["thirdTime"] as? String
+        let thridRap = formValues["thridRap"] as? String
         let fourthTime = formValues["fourthTime"] as? String
         let sense = formValues["sense"] as? String
         let motivation = formValues["motivation"] as? String
         let physicalCondition = formValues["physicalCondition"] as? String
-        
         
         let menu = ["name": name,
                     "style": style,
@@ -139,9 +260,13 @@ class RecordViewController: FormViewController {
                     "date": date.description,
                     "place": place,
                     "poolType": poolType,
+                    "reactionTime": reactionTime,
                     "firstTime": firstTime,
+                    "firstRap": firstRap,
                     "secondTime": secondTime,
+                    "secondRap": secondRap,
                     "thirdTime": thirdTime,
+                    "thridRap": thridRap,
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
@@ -162,5 +287,4 @@ class RecordViewController: FormViewController {
         self.present(alertController, animated: true, completion: nil)
     }
    
-
 }

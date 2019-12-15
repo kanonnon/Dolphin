@@ -13,10 +13,11 @@ import SwiftDate
 
 class RecordTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
     @IBOutlet var recordListTableView: UITableView!
     
     var competitions = [Record]()
+    
+    var key: String!
     
     var ref: DatabaseReference!
 
@@ -101,12 +102,13 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
     func loadRecords() {
         // データベースからデータを読み込んでrecords配列に入れる。そのあと、tableViewの表示を更新。
         ref.child("competition").observeSingleEvent(of: .value) { snapshot in
-            
+            print(snapshot.value as? [String: [String:String]])
             if let data = snapshot.value as? [String: [String:String]]{
                 self.competitions = [Record]()
                 
                 for (_, value) in data {
                     let record = Record()
+                    record.id = self.ref.childByAutoId().key
                     record.name = value[Record.field.name.rawValue]
                     record.style = value[Record.field.style.rawValue]
                     record.length = value[Record.field.length.rawValue]
@@ -115,9 +117,13 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
                     record.competition = value[Record.field.competitoin.rawValue]
                     record.place = value[Record.field.place.rawValue]
                     record.poolType = value[Record.field.poolType.rawValue]
+                    record.reactionTime = value[Record.field.reactionTime.rawValue]
                     record.firstTime = value[Record.field.firstTime.rawValue]
+                    record.firstRap = value[Record.field.firstRap.rawValue]
                     record.secondTime = value[Record.field.secondTime.rawValue]
+                    record.secondRap = value[Record.field.secondRap.rawValue]
                     record.thirdTime = value[Record.field.thirdTime.rawValue]
+                    record.thridRap = value[Record.field.thridRap.rawValue]
                     record.fourthTime = value[Record.field.fourthTime.rawValue]
                     record.sense = value[Record.field.sense.rawValue]
                     record.motivation = value[Record.field.motivation.rawValue]

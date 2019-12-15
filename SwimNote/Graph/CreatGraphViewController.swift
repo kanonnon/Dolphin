@@ -23,6 +23,7 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
          navigationItem.rightBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem?.title = "選択"
         
         // 複数選択を有効にする
         createGraphTableView.allowsMultipleSelectionDuringEditing = true

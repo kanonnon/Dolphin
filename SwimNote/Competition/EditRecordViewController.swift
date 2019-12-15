@@ -16,12 +16,16 @@ class EditRecordViewController: FormViewController {
     
     var selectedRecord: Record!
     
+//    var selectedKey: String!
+    
     var selectedImg = UIImage()
     
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         ref = Database.database().reference()
         
@@ -45,6 +49,7 @@ class EditRecordViewController: FormViewController {
             <<< TextRow("name") {
                 $0.title = "選手氏名"
                 $0.placeholder = "選手の名前を入力"
+                $0.value = selectedRecord.name
             }
             <<< PickerInlineRow<String>("style") { row in
                 row.title = "種目"
@@ -82,25 +87,48 @@ class EditRecordViewController: FormViewController {
                     userDefault.setValue(row.value, forKey: "")
         }
         form +++ Section("タイム詳細")
+            <<< TextRow("reactionTime") {
+                $0.title = "ﾘｱｸｼｮﾝﾀｲﾑ"
+                $0.placeholder = "ﾘｱｸｼｮﾝﾀｲﾑを入力"
+                $0.value = selectedRecord.reactionTime
+            }
             <<< TextRow("firstTime") {
                 $0.title = "50m"
                 $0.placeholder = "50mのタイムを入力"
                 $0.value = selectedRecord.firstTime
             }
+            
             <<< TextRow("secondTime") {
                 $0.title = "100m"
                 $0.placeholder = "100mのタイムを入力"
                 $0.value = selectedRecord.secondTime
             }
+            <<< TextRow("firstRap") {
+                $0.title = " "
+                $0.placeholder = "ラップを入力"
+                $0.value = selectedRecord.firstRap
+            }
+            
             <<< TextRow("thirdTime") {
                 $0.title = "150m"
                 $0.placeholder = "150mのタイムを入力"
                 $0.value = selectedRecord.thirdTime
             }
+            <<< TextRow("secondRap") {
+                $0.title = " "
+                $0.placeholder = "ラップを入力"
+                $0.value = selectedRecord.secondRap
+            }
+            
             <<< TextRow("fourthTime") {
                 $0.title = "200m"
                 $0.placeholder = "200mのタイムを入力"
                 $0.value = selectedRecord.fourthTime
+        }
+            <<< TextRow("thridRap") {
+                $0.title = " "
+                $0.placeholder = "ラップを入力"
+                $0.value = selectedRecord.thridRap
         }
         
         
@@ -139,6 +167,7 @@ class EditRecordViewController: FormViewController {
     
     func updateRecord() {
         let formValues = self.form.values()
+        let name = formValues["name"] as! String
         let style = formValues["style"] as! String
         let length = formValues["length"] as! String
         let totalTime = formValues["totalTime"] as! String
@@ -146,35 +175,44 @@ class EditRecordViewController: FormViewController {
         let date = formValues["date"] as! Date
         let place = formValues["place"] as? String
         let poolType = formValues["poolType"] as! String
+        let reactionTime = formValues["reactionTime"] as? String
         let firstTime = formValues["firstTime"] as? String
+        let firstRap = formValues["firstRap"] as? String
         let secondTime = formValues["secondTime"] as? String
+        let secondRap = formValues["secondRap"] as? String
         let thirdTime = formValues["thirdTime"] as? String
+        let thridRap = formValues["thridRap"] as? String
         let fourthTime = formValues["fourthTime"] as? String
         let sense = formValues["sense"] as? String
         let motivation = formValues["motivation"] as? String
         let physicalCondition = formValues["physicalCondition"] as? String
         
         
-        let menu = ["style": style,
+        let menu = ["name": name,
+                    "style": style,
                     "length": length,
                     "totalTime": totalTime,
                     "competition": competition,
                     "date": date.description,
                     "place": place,
                     "poolType": poolType,
+                    "reactionTime": reactionTime,
                     "firstTime": firstTime,
+                     "firstRap": firstRap,
                     "secondTime": secondTime,
+                    "secondRap": secondRap,
                     "thirdTime": thirdTime,
+                    "thridRap": thridRap,
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
                     "physicalCondition": physicalCondition] as [String : Any]
-        
-        self.ref.child("competition").childByAutoId().updateChildValues(menu)
+        ref.child("competition/-Lw3tk-fX7iRnyiEbywq").updateChildValues(menu)
     }
     
     func removeRecord() {
         let formValues = self.form.values()
+        let name = formValues["name"] as! String
         let style = formValues["style"] as? String
         let length = formValues["length"] as? String
         let totalTime = formValues["totalTime"] as? String
@@ -182,30 +220,39 @@ class EditRecordViewController: FormViewController {
         let date = formValues["date"] as? Date
         let place = formValues["place"] as? String
         let poolType = formValues["poolType"] as? String
+        let reactionTime = formValues["reactionTime"] as? String
         let firstTime = formValues["firstTime"] as? String
+        let firstRap = formValues["firstRap"] as? String
         let secondTime = formValues["secondTime"] as? String
+        let secondRap = formValues["secondRap"] as? String
         let thirdTime = formValues["thirdTime"] as? String
+        let thridRap = formValues["thridRap"] as? String
         let fourthTime = formValues["fourthTime"] as? String
         let sense = formValues["sense"] as? String
         let motivation = formValues["motivation"] as? String
         let physicalCondition = formValues["physicalCondition"] as? String
         
-        let menu = ["style": style,
+        let menu = ["name": name,
+                    "style": style,
                     "length": length,
                     "totalTime": totalTime,
                     "competition": competition,
                     "date": date?.description,
                     "place": place,
                     "poolType": poolType,
+                    "reactionTime": reactionTime,
                     "firstTime": firstTime,
+                    "firstRap": firstRap,
                     "secondTime": secondTime,
+                    "secondRap": secondRap,
                     "thirdTime": thirdTime,
+                    "thridRap": thridRap,
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
                     "physicalCondition": physicalCondition] as [String : Any]
         
-        self.ref.child("competition").childByAutoId().removeValue()
+        self.ref.child("competition/\(selectedRecord.id)").childByAutoId().removeValue()
     }
  
     

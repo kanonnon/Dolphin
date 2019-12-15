@@ -75,7 +75,7 @@ class AddMenuViewController: FormViewController {
         }
         
         form +++ Section("タイム")
-            <<< TextAreaRow { row in
+            <<< TextAreaRow("time")  { row in
                 row.placeholder = "タイムを入力"
         }
         
@@ -93,18 +93,6 @@ class AddMenuViewController: FormViewController {
         let ud = UserDefaults.standard
         let formValues = self.form.values()
         
-        /*
-        ud.set(formValues["menuName"] as? String, forKey: "menuName")
-        ud.set(formValues["style"] as! String, forKey: "style")
-        ud.set(formValues["detail"] as! String, forKey: "detail")
-        ud.set(formValues["memo"] as? String, forKey: "memo")
-        ud.set(formValues["distance"] as? String, forKey: "distance")
-        ud.set(formValues["times"] as? String, forKey: "times")
-        ud.set(formValues["sets"] as? String, forKey: "sets")
-        ud.set(formValues["totalLength"] as? String, forKey: "totalLength")
-        ud.set(formValues["circle"] as? String, forKey: "circle")
-        ud.set(formValues["setRest"] as? String, forKey: "setRest")
-         */
         
         // 過去にメニューが保存されていたら、過去に追加したメニューを取り出して、新しいメニューを追加
         if var menus = ud.array(forKey: "menus") as? [Dictionary<String, String?>] {
@@ -112,7 +100,6 @@ class AddMenuViewController: FormViewController {
                 "menuName": formValues["menuName"] as? String,
                 "style": formValues["style"] as? String,
                 "detail": formValues["detail"] as? String,
-                /*
                 "memo": formValues["memo"] as? String,
                 "distance": formValues["distance"] as? String,
                 "times": formValues["times"] as? String,
@@ -121,7 +108,6 @@ class AddMenuViewController: FormViewController {
                 "circle": formValues["circle"] as? String,
                 "setRest": formValues["setRest"] as? String,
                 "time": formValues["time"] as? String
- */
             ]
             menus.append(newMenu)
             ud.set(menus, forKey: "menus")
@@ -132,7 +118,6 @@ class AddMenuViewController: FormViewController {
                 "menuName": formValues["menuName"] as? String,
                 "style": formValues["style"] as? String,
                 "detail": formValues["detail"] as? String,
-                /*
                 "memo": formValues["memo"] as? String,
                 "distance": formValues["distance"] as? String,
                 "times": formValues["times"] as? String,
@@ -141,7 +126,6 @@ class AddMenuViewController: FormViewController {
                 "circle": formValues["circle"] as? String,
                 "setRest": formValues["setRest"] as? String,
                 "time": formValues["time"] as? String
- */
             ]
             menus.append(newMenu)
             ud.set(menus, forKey: "menus")
@@ -149,31 +133,6 @@ class AddMenuViewController: FormViewController {
         
         ud.synchronize()
         
-//        let formValues = self.form.values()
-//        let menuName = formValues["menuName"] as! String
-//        let style = formValues["style"] as! String
-//        let detail = formValues["detail"] as! String
-//        let memo = formValues["memo"] as! String
-//        let length = formValues["length"] as! String
-//        let times = formValues["times"] as! String
-//        let sets = formValues["sets"] as! String
-//        let totalLength = formValues["totalLength"] as! String
-//        let circle = formValues["circle"] as! String
-//        let setRest = formValues["setRest"] as! String
-//
-//        let menu = ["menuName":  menuName,
-//                    "style": style,
-//                    "detail": detail,
-//                    "memo": memo,
-//                    "length": length,
-//                    "times": times,
-//                    "sets":  sets,
-//                    "totalLength": totalLength,
-//                    "circle": circle,
-//                    "setRest": setRest,
-//                    "time": time] as [String : Any]
-//
-//        self.ref.child("detailMenu").childByAutoId().setValue(menu)
     }
     
     @IBAction func save(){

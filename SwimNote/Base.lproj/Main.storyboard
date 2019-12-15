@@ -222,19 +222,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CY-76-ulv">
-                                <rect key="frame" x="88" y="65" width="72" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="icons8-設定-64.png.jpg">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="toEditMyPage" destination="snj-A9-6CZ" eventType="touchDown" id="ah9-nd-R6s"/>
-                                    <segue destination="59t-dU-zCY" kind="show" id="KCQ-iG-FMd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91w-0s-RBS">
                                 <rect key="frame" x="168" y="65" width="72" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -257,6 +244,17 @@
                                 </state>
                                 <connections>
                                     <segue destination="ibe-yM-5U2" kind="presentation" id="D7h-Rv-SPa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj3-8O-2K1">
+                                <rect key="frame" x="88" y="64" width="72" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icons8-設定-64.png.jpg">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="59t-dU-zCY" kind="show" id="Jcg-6B-iN4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -473,7 +471,7 @@
         <!--友達一覧-->
         <scene sceneID="OMU-36-kJb">
             <objects>
-                <viewController id="lo2-gI-RhN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="lo2-gI-RhN" customClass="HomeViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JFc-0b-sxH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -665,6 +663,7 @@
         <!--グラフ-->
         <scene sceneID="sxX-QF-93W">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEi-Lg-Fst" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GT9-eL-pGQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="グラフ" image="icons8-棒グラフ-24.png.png" id="Qiq-C8-E6u"/>
                     <toolbarItems/>
@@ -681,7 +680,6 @@
                         <segue destination="n5k-6G-lkN" kind="relationship" relationship="rootViewController" id="x0y-q3-KBk"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LEi-Lg-Fst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3174" y="-5071"/>
         </scene>
@@ -770,10 +768,11 @@
             </objects>
             <point key="canvasLocation" x="1377" y="-3563"/>
         </scene>
-        <!--Edit My Page Navi View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="IwC-h0-ALd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="59t-dU-zCY" customClass="EditMyPageNaviViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1y-Qn-kVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="59t-dU-zCY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6EF-dC-9RR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -786,7 +785,6 @@
                         <segue destination="B9h-Fn-WMZ" kind="relationship" relationship="rootViewController" id="CzW-iN-IUT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i1y-Qn-kVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3174" y="-4285"/>
         </scene>
@@ -841,6 +839,6 @@
         <image name="menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ok6-vt-yF5"/>
+        <segue reference="auB-WB-Bqg"/>
     </inferredMetricsTieBreakers>
 </document>

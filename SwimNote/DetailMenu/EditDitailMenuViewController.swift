@@ -71,7 +71,7 @@ class EditDitailMenuViewController: FormViewController {
         }
         
         form +++ Section("タイム")
-            <<< TextAreaRow { row in
+            <<< TextAreaRow ("time"){ row in
                 row.placeholder = "タイムを入力"
         }
 

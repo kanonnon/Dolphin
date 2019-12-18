@@ -90,7 +90,6 @@ class EditMyPageViewController: FormViewController {
 //            self.navigationController?.pushViewController(nextView, animated: true)
 //            self.present(nextView, animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
-            //TODO画面遷移がPushになるようにする
         })
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)

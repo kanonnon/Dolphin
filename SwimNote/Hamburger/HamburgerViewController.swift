@@ -7,7 +7,6 @@
 
 //ハンバーガーメニューの画面
 //SideMenuの横幅は大体240くらい
-//TODO画面遷移
 
 import UIKit
 import SideMenu

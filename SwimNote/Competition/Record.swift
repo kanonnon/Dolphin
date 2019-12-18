@@ -30,6 +30,7 @@ class Record: NSObject {
     var sense: String?
     var motivation: String?
     var physicalCondition: String?
+    var memo: String?
     
     enum field: String {
         case id = "id"
@@ -52,6 +53,7 @@ class Record: NSObject {
         case sense = "sense"
         case motivation = "motivetion"
         case physicalCondition = "physicalCondition"
+        case memo = "memo"
     }
 }
     

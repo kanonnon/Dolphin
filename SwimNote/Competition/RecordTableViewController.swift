@@ -128,6 +128,7 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
                     record.sense = value[Record.field.sense.rawValue]
                     record.motivation = value[Record.field.motivation.rawValue]
                     record.physicalCondition = value[Record.field.physicalCondition.rawValue]
+                    record.memo = value[Record.field.memo.rawValue]
                  
                 
                     self.competitions.append(record)

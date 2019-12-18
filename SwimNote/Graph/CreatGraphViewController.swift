@@ -23,7 +23,7 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
          navigationItem.rightBarButtonItem = editButtonItem
-        navigationItem.rightBarButtonItem?.title = "選択"
+         navigationItem.rightBarButtonItem?.title = "選択"
         
         // 複数選択を有効にする
         createGraphTableView.allowsMultipleSelectionDuringEditing = true
@@ -117,14 +117,12 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
                 self.createGraphTableView.headRefreshControl.endRefreshing()
             }
         }
-        
     }
     
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
     
-
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

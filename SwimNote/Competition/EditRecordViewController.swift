@@ -157,6 +157,11 @@ class EditRecordViewController: FormViewController {
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
         }
+            form +++ Section("メモ")
+            <<< TextAreaRow("memo") { row in
+                row.title = "メモ"
+                row.value = selectedRecord.memo
+        }
         
     }
 
@@ -186,6 +191,7 @@ class EditRecordViewController: FormViewController {
         let sense = formValues["sense"] as? String
         let motivation = formValues["motivation"] as? String
         let physicalCondition = formValues["physicalCondition"] as? String
+        let memo = formValues["memo"] as? String
         
         
         let menu = ["name": name,
@@ -206,7 +212,8 @@ class EditRecordViewController: FormViewController {
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
-                    "physicalCondition": physicalCondition] as [String : Any]
+                    "physicalCondition": physicalCondition,
+                    "memo": memo] as [String : Any]
         ref.child("competition/-Lw3tk-fX7iRnyiEbywq").updateChildValues(menu)
     }
     
@@ -231,6 +238,7 @@ class EditRecordViewController: FormViewController {
         let sense = formValues["sense"] as? String
         let motivation = formValues["motivation"] as? String
         let physicalCondition = formValues["physicalCondition"] as? String
+        let memo = formValues["memo"] as? String
         
         let menu = ["name": name,
                     "style": style,
@@ -250,7 +258,8 @@ class EditRecordViewController: FormViewController {
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
-                    "physicalCondition": physicalCondition] as [String : Any]
+                    "physicalCondition": physicalCondition,
+                    "memo": memo] as [String : Any]
         
         self.ref.child("competition/\(selectedRecord.id)").childByAutoId().removeValue()
     }

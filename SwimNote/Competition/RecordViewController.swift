@@ -5,7 +5,6 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//TODO詳細タイムの入力するところを泳いだ距離に応じて変えたい。ラップを計算して欲しい。
 
 import UIKit
 import Eureka
@@ -82,6 +81,12 @@ class RecordViewController: FormViewController {
                             print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
                         }
                     }
+                    if let firstTimeValue = row.value{
+                        if firstTimeValue != nil{
+                            self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
+                            self.form.rowBy(tag: "firstRap")?.reload()
+                        }
+                    }
                 })
             
             <<< TextRow("secondTime") {
@@ -91,10 +96,17 @@ class RecordViewController: FormViewController {
                     if let timeValue = row.value?.components(separatedBy: ".") {
                         print(timeValue)
                         if timeValue.count > 2 {
-                            print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])                        }
+                            print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
+                        }
                     }
-                    self.form.rowBy(tag: "thridRap")?.value = self.calcDiff()
-                    self.form.rowBy(tag: "thridRap")?.reload()
+                    if let secondTimeValue = row.value{
+                        if secondTimeValue != nil{
+                            self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
+                            self.form.rowBy(tag: "firstRap")?.reload()
+                            self.form.rowBy(tag: "secondRap")?.value = self.calcDiff2()
+                            self.form.rowBy(tag: "secondRap")?.reload()
+                        }
+                    }
                 })
             
             <<< TextRow("firstRap") {
@@ -116,8 +128,14 @@ class RecordViewController: FormViewController {
                             print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
                         }
                     }
-                    self.form.rowBy(tag: "thridRap")?.value = self.calcDiff()
-                    self.form.rowBy(tag: "thridRap")?.reload()
+                    if let thirdTimeValue = row.value{
+                        if thirdTimeValue != nil{
+                            self.form.rowBy(tag: "secondRap")?.value = self.calcDiff2()
+                            self.form.rowBy(tag: "secondRap")?.reload()
+                            self.form.rowBy(tag: "thridRap")?.value = self.calcDiff3()
+                            self.form.rowBy(tag: "thridRap")?.reload()
+                        }
+                    }
                 })
             <<< TextRow("secondRap") {
                 $0.title = "ラップ"
@@ -135,16 +153,18 @@ class RecordViewController: FormViewController {
                             print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
                         }
                     }
-                    self.form.rowBy(tag: "thridRap")?.value = self.calcDiff()
-                    self.form.rowBy(tag: "thridRap")?.reload()
+                    if let forthTimeValue = row.value{
+                        if forthTimeValue != nil{
+                            self.form.rowBy(tag: "thridRap")?.value = self.calcDiff3()
+                            self.form.rowBy(tag: "thridRap")?.reload()
+                        }
+                    }
                 })
             <<< TextRow("thridRap") {
                 $0.title = "ラップ"
-                //$0.disabled = true
+                $0.disabled = true
                 }.onCellSelection({ (cell, row) in
                     print("tap!!!!!!")
-                    
-                    //row.reload()
                 })
 
         
@@ -171,10 +191,142 @@ class RecordViewController: FormViewController {
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
                 }
+            form +++ Section("メモ")
+            <<< TextAreaRow("memo") { row in
+                row.title = "メモ"
+                }
         
     }
+    func calcDiff1() -> String {
+        let formValues = self.form.values()
+        let secondTime = formValues["secondTime"] as? String
+        let firstTime = formValues["firstTime"] as? String
+        
+        // second - first
+        var f_min = 0
+        var f_sec = 0
+        var f_msec = 0
+        if let firstTimeValue = firstTime?.components(separatedBy: ".") {
+            if firstTimeValue.count > 2 {
+                if let f_min_v = Int(firstTimeValue[0]) {
+                    f_min = f_min_v
+                }
+                if let f_sec_v = Int(firstTimeValue[1]) {
+                    f_sec = f_sec_v
+                }
+                if let f_msec_v = Int(firstTimeValue[2]) {
+                    f_msec = f_msec_v
+                }
+            }
+        }
+        
+        var s_min = 0
+        var s_sec = 0
+        var s_msec = 0
+        if let secondTimeValue = secondTime?.components(separatedBy: ".") {
+            if secondTimeValue.count > 2 {
+                if let s_min_v = Int(secondTimeValue[0]) {
+                    s_min = s_min_v
+                }
+                if let s_sec_v = Int(secondTimeValue[1]) {
+                    s_sec = s_sec_v
+                }
+                if let s_msec_v = Int(secondTimeValue[2]) {
+                    s_msec = s_msec_v
+                }
+            }
+        }
+        
+        let f_total_msec = (6000*f_min)+(100*f_sec)+(f_msec)
+        let s_total_msec = (6000*s_min)+(100*s_sec)+(s_msec)
+        
+        let total_msec = (s_total_msec)-(f_total_msec)
+        func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
+            return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+        }
+        if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
+            let result = "\(total_msec / 6000).\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
+            return result
+        }else if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 < 10 {
+            let result2 = "\(total_msec / 6000).\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
+            return result2
+        }else if (total_msec % 6000) / 100 < 10 && (total_msec % 6000) % 100 > 9{
+            let result3 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
+            return result3
+        }else{
+            let result4 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
+            return result4
+        }
+        
+        print(total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+    }
     
-    func calcDiff() -> String {
+    func calcDiff2() -> String {
+        let formValues = self.form.values()
+        let secondTime = formValues["secondTime"] as? String
+        let thirdTime = formValues["thirdTime"] as? String
+        
+        // third - second
+        var t_min = 0
+        var t_sec = 0
+        var t_msec = 0
+        if let thirdTimeValue = thirdTime?.components(separatedBy: ".") {
+            if thirdTimeValue.count > 2 {
+                if let t_min_v = Int(thirdTimeValue[0]) {
+                    t_min = t_min_v
+                }
+                if let t_sec_v = Int(thirdTimeValue[1]) {
+                    t_sec = t_sec_v
+                }
+                if let t_msec_v = Int(thirdTimeValue[2]) {
+                    t_msec = t_msec_v
+                }
+            }
+        }
+        
+        var s_min = 0
+        var s_sec = 0
+        var s_msec = 0
+        if let secondTimeValue = secondTime?.components(separatedBy: ".") {
+            if secondTimeValue.count > 2 {
+                if let s_min_v = Int(secondTimeValue[0]) {
+                    s_min = s_min_v
+                }
+                if let s_sec_v = Int(secondTimeValue[1]) {
+                    s_sec = s_sec_v
+                }
+                if let s_msec_v = Int(secondTimeValue[2]) {
+                    s_msec = s_msec_v
+                }
+            }
+        }
+        
+        let t_total_msec = (6000*t_min)+(100*t_sec)+(t_msec)
+        let s_total_msec = (6000*s_min)+(100*s_sec)+(s_msec)
+        
+        let total_msec = (t_total_msec)-(s_total_msec)
+        func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
+            return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+        }
+        if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
+            let result = "\(total_msec / 6000).\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
+            return result
+        }else if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 < 10 {
+            let result2 = "\(total_msec / 6000).\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
+            return result2
+        }else if (total_msec % 6000) / 100 < 10 && (total_msec % 6000) % 100 > 9{
+            let result3 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
+            return result3
+        }else{
+            let result4 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
+            return result4
+        }
+        
+        print(total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+    }
+    
+
+    func calcDiff3() -> String {
         let formValues = self.form.values()
         let thirdTime = formValues["thirdTime"] as? String
         let fourthTime = formValues["fourthTime"] as? String
@@ -214,20 +366,28 @@ class RecordViewController: FormViewController {
             }
         }
         
-        let rap_min = 6000*f_min - 6000*t_min
-        let rap_sec = 100*f_sec - 100*t_sec
-        let rap_msec = f_msec - t_msec
+        let f_total_msec = (6000*f_min)+(100*f_sec)+(f_msec)
+        let t_total_msec = (6000*t_min)+(100*t_sec)+(t_msec)
         
-        print("\(rap_min)分\(rap_sec)秒\(rap_msec)")
-        
-        let total_msec = (rap_min)+(rap_sec)+(rap_msec)
+        let total_msec = (f_total_msec)-(t_total_msec)
         func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
             return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
         }
-        let result = "\(total_msec / 6000).\((total_msec % 6000) / 60).\((total_msec % 6000) % 100)"
-        
-        print(total_msec / 6000, (total_msec % 6000) / 60, (total_msec % 6000) % 100)
-        return result
+        if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
+            let result = "\(total_msec / 6000).\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
+            return result
+        }else if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 < 10 {
+            let result2 = "\(total_msec / 6000).\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
+            return result2
+        }else if (total_msec % 6000) / 100 < 10 && (total_msec % 6000) % 100 > 9{
+            let result3 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
+            return result3
+        }else{
+            let result4 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
+            return result4
+        }
+    
+        print(total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
     }
     
     func saveRecord() {
@@ -251,6 +411,7 @@ class RecordViewController: FormViewController {
         let sense = formValues["sense"] as? String
         let motivation = formValues["motivation"] as? String
         let physicalCondition = formValues["physicalCondition"] as? String
+        let memo = formValues["memo"] as? String
         
         let menu = ["name": name,
                     "style": style,
@@ -270,7 +431,8 @@ class RecordViewController: FormViewController {
                     "fourthTime": fourthTime,
                     "sense": sense,
                     "motivation": motivation,
-                    "physicalCondition": physicalCondition,] as [String : Any]
+                    "physicalCondition": physicalCondition,
+                    "memo": memo] as [String : Any]
             
         self.ref.child("competition").childByAutoId().setValue(menu)
     }

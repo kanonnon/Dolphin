@@ -11,12 +11,12 @@ import UIKit
 // 練習の概要記録
 class OutlineMenu: NSObject {
     
+    var id: String?
     var date: String?
     var startTime: String?
     var endTime: String?
     var place: String?
     var poolType: String?
     var length: String?
-    var imageUrl: String?
     
 }

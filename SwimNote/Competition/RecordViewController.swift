@@ -440,7 +440,6 @@ class RecordViewController: FormViewController {
     
     @IBAction func save(){
         saveRecord()
-        
         let alertController = UIAlertController(title: "保存完了！", message:"メニューの保存が完了しました。大会記録リストに戻ります。", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)
@@ -450,3 +449,4 @@ class RecordViewController: FormViewController {
     }
    
 }
+

@@ -16,16 +16,12 @@ class EditRecordViewController: FormViewController {
     
     var selectedRecord: Record!
     
-//    var selectedKey: String!
-    
     var selectedImg = UIImage()
     
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+        super.viewDidLoad() 
         
         ref = Database.database().reference()
         
@@ -42,9 +38,8 @@ class EditRecordViewController: FormViewController {
                     })
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
-                    
-                    
                 })
+        
         form +++ Section("概要")
             <<< TextRow("name") {
                 $0.title = "選手氏名"
@@ -214,7 +209,7 @@ class EditRecordViewController: FormViewController {
                     "motivation": motivation,
                     "physicalCondition": physicalCondition,
                     "memo": memo] as [String : Any]
-        ref.child("competition/-Lw3tk-fX7iRnyiEbywq").updateChildValues(menu)
+        ref.child("competition/\(selectedRecord.id)").updateChildValues(menu)
     }
     
     func removeRecord() {
@@ -265,9 +260,8 @@ class EditRecordViewController: FormViewController {
     }
  
     
-    
     @IBAction func remove(){
-        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "保存してもいいですか？", preferredStyle:  UIAlertController.Style.alert)
+        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "削除してもいいですか？", preferredStyle:  UIAlertController.Style.alert)
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
             (action: UIAlertAction!) -> Void in

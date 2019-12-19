@@ -12,6 +12,8 @@
 		68012D2A23A4A0AA0000D35F /* CreatGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */; };
 		68012D2D23A4A61F0000D35F /* CreatGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */; };
 		68012D2E23A4A61F0000D35F /* CreatGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */; };
+		6801B0D123AB51D900FBF270 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801B0D023AB51D900FBF270 /* MyPage.swift */; };
+		6801B0D323AB66E900FBF270 /* OutlineMenuListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6801B0D223AB66E900FBF270 /* OutlineMenuListTableViewCell.xib */; };
 		6801BADD232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */; };
 		6808E3DB239D3E83001C7A3C /* EditRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */; };
 		680FBAC02309424000B2B097 /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FBABF2309424000B2B097 /* AddMenuViewController.swift */; };
@@ -84,7 +86,6 @@
 		68FF6E1723124D0300DFE0E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68FF6E1623124D0300DFE0E4 /* GoogleService-Info.plist */; };
 		68FF6E1923127E5D00DFE0E4 /* OutlineMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */; };
 		68FF6E1C23127E7500DFE0E4 /* OutlineMenuListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E1A23127E7400DFE0E4 /* OutlineMenuListTableViewCell.swift */; };
-		68FF6E1D23127E7500DFE0E4 /* OutlineMenuListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FF6E1B23127E7400DFE0E4 /* OutlineMenuListTableViewCell.xib */; };
 		68FF6E1F23127F5100DFE0E4 /* OutlineMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E1E23127F5100DFE0E4 /* OutlineMenu.swift */; };
 		68FF6E2123129E6B00DFE0E4 /* AddMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E2023129E6B00DFE0E4 /* AddMenu.swift */; };
 		68FF6E2323129EC500DFE0E4 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E2223129EC500DFE0E4 /* RecordTableViewController.swift */; };
@@ -96,6 +97,8 @@
 		68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatGraphViewController.swift; sourceTree = "<group>"; };
 		68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatGraphTableViewCell.swift; sourceTree = "<group>"; };
 		68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatGraphTableViewCell.xib; sourceTree = "<group>"; };
+		6801B0D023AB51D900FBF270 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		6801B0D223AB66E900FBF270 /* OutlineMenuListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutlineMenuListTableViewCell.xib; sourceTree = "<group>"; };
 		6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ゲスト男性-48.png@2x.png"; sourceTree = "<group>"; };
 		6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewController.swift; sourceTree = "<group>"; };
 		680FBABF2309424000B2B097 /* AddMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +173,6 @@
 		68FF6E1623124D0300DFE0E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenuListViewController.swift; sourceTree = "<group>"; };
 		68FF6E1A23127E7400DFE0E4 /* OutlineMenuListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenuListTableViewCell.swift; sourceTree = "<group>"; };
-		68FF6E1B23127E7400DFE0E4 /* OutlineMenuListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutlineMenuListTableViewCell.xib; sourceTree = "<group>"; };
 		68FF6E1E23127F5100DFE0E4 /* OutlineMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenu.swift; sourceTree = "<group>"; };
 		68FF6E2023129E6B00DFE0E4 /* AddMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenu.swift; sourceTree = "<group>"; };
 		68FF6E2223129EC500DFE0E4 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
@@ -321,7 +323,7 @@
 				68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */,
 				68FF6E1E23127F5100DFE0E4 /* OutlineMenu.swift */,
 				68FF6E1A23127E7400DFE0E4 /* OutlineMenuListTableViewCell.swift */,
-				68FF6E1B23127E7400DFE0E4 /* OutlineMenuListTableViewCell.xib */,
+				6801B0D223AB66E900FBF270 /* OutlineMenuListTableViewCell.xib */,
 				68F0C39223A12A4C00822685 /* EditOutlineMenuViewController.swift */,
 			);
 			path = OutlineMenu;
@@ -394,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */,
+				6801B0D023AB51D900FBF270 /* MyPage.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -504,7 +507,6 @@
 				689589AF239E3C3100A157DD /* icons8-設定-64.png@2x.jpg in Resources */,
 				68F0C37B23A1070300822685 /* Icon-App-40x40@1x.png in Resources */,
 				68F0C37A23A1070300822685 /* Icon-App-29x29@1x.png in Resources */,
-				68FF6E1D23127E7500DFE0E4 /* OutlineMenuListTableViewCell.xib in Resources */,
 				68DDF717232BCC4500DAF474 /* RecordTableViewCell.xib in Resources */,
 				68F0C38023A1070300822685 /* Contents.json in Resources */,
 				68F0C35E23A0B8FE00822685 /* tutorialImage3.PNG in Resources */,
@@ -513,6 +515,7 @@
 				680FBAC423094E2900B2B097 /* SampleTableViewCell.xib in Resources */,
 				68A239C923000BFD00F285F7 /* Assets.xcassets in Resources */,
 				689589C3239E718300A157DD /* icons8-質問する-48.png@2x.jpg in Resources */,
+				6801B0D323AB66E900FBF270 /* OutlineMenuListTableViewCell.xib in Resources */,
 				68F0C38A23A1070300822685 /* iTunesArtwork@2x.png in Resources */,
 				68F0C39123A113EC00822685 /* SignIn.storyboard in Resources */,
 				68F0C37823A1070300822685 /* iTunesArtwork@1x.png in Resources */,
@@ -590,6 +593,7 @@
 				68FF6E2323129EC500DFE0E4 /* RecordTableViewController.swift in Sources */,
 				68DDF716232BCC4500DAF474 /* RecordTableViewCell.swift in Sources */,
 				68FF6E1923127E5D00DFE0E4 /* OutlineMenuListViewController.swift in Sources */,
+				6801B0D123AB51D900FBF270 /* MyPage.swift in Sources */,
 				6808E3DB239D3E83001C7A3C /* EditRecordViewController.swift in Sources */,
 				68012D2823A49BF80000D35F /* EditDitailMenuViewController.swift in Sources */,
 				689589B2239E42A100A157DD /* FinalMenuViewController.swift in Sources */,

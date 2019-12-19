@@ -67,6 +67,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="練習メニュー" id="9YK-fX-eub">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="cgj-Dj-YQ9"/>
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="igK-db-kSm">
+                            <connections>
+                                <action selector="back" destination="bEc-hz-Jfy" id="OW2-XC-dL9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="sVr-xA-csh">
                             <connections>
                                 <action selector="save" destination="bEc-hz-Jfy" id="5IV-9e-0Or"/>
@@ -92,10 +97,75 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mD5-ia-Avb"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lVS-RC-XEu">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="xd8-78-GId">
+                            <connections>
+                                <action selector="back" destination="ASt-Hm-xTd" id="NDS-eP-S45"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="G6w-KY-BBT">
+                            <connections>
+                                <action selector="remove" destination="ASt-Hm-xTd" id="ISW-RL-B4I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="k7k-Qk-pfe" kind="show" id="iyh-yA-huK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaO-v1-ApP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286" y="466"/>
+            <point key="canvasLocation" x="2286" y="537"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uzE-em-0hi">
+            <objects>
+                <viewController id="AWI-bI-hbD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eX1-FD-iFX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U6f-hj-QTg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="r8B-4d-r64"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="piJ-sN-12g">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="wuD-yX-Xdp">
+                            <connections>
+                                <action selector="back" destination="AWI-bI-hbD" id="FiM-gQ-GnE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2M4-wI-Auf"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Tgf-nT-9Zc" kind="show" id="D2p-zu-CeS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dG-lB-EPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4164" y="537"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I0h-EC-4CI">
+            <objects>
+                <viewController id="Tgf-nT-9Zc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fEq-MD-Phz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0dq-TS-yZQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYb-SK-dpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5148" y="537"/>
         </scene>
         <!--メニューリスト-->
         <scene sceneID="RFO-Uc-t5c">
@@ -402,7 +472,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="OutlineMenuListTableView" destination="Agl-3R-Qe0" id="LpN-w9-Fse"/>
-                        <segue destination="ASt-Hm-xTd" kind="show" identifier="toEdit" id="fnj-KA-IN3"/>
+                        <segue destination="ASt-Hm-xTd" kind="show" identifier="toEdit" id="pPe-yD-R60"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYy-3A-bYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDp-D5-IzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3255.1999999999998" y="-1119.4902548725638"/>
+            <point key="canvasLocation" x="3225" y="-1119"/>
         </scene>
         <!--練習記録-->
         <scene sceneID="bqv-lO-fGt">
@@ -663,7 +733,6 @@
         <!--グラフ-->
         <scene sceneID="sxX-QF-93W">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LEi-Lg-Fst" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GT9-eL-pGQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="グラフ" image="icons8-棒グラフ-24.png.png" id="Qiq-C8-E6u"/>
                     <toolbarItems/>
@@ -680,6 +749,7 @@
                         <segue destination="n5k-6G-lkN" kind="relationship" relationship="rootViewController" id="x0y-q3-KBk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEi-Lg-Fst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3174" y="-5071"/>
         </scene>
@@ -771,7 +841,6 @@
         <!--Navigation Controller-->
         <scene sceneID="IwC-h0-ALd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i1y-Qn-kVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="59t-dU-zCY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6EF-dC-9RR">
@@ -785,6 +854,7 @@
                         <segue destination="B9h-Fn-WMZ" kind="relationship" relationship="rootViewController" id="CzW-iN-IUT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1y-Qn-kVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3174" y="-4285"/>
         </scene>
@@ -826,6 +896,25 @@
             </objects>
             <point key="canvasLocation" x="3173.5999999999999" y="-5826.8365817091462"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQW-0x-bvU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k7k-Qk-pfe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tMX-v5-uZT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.69108810750000005" green="0.9180667723" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AWI-bI-hbD" kind="relationship" relationship="rootViewController" id="qRL-Y0-awa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TP-kB-GYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3225" y="537"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icons8-ゲスト男性-48.png.png" width="24" height="24"/>
@@ -839,6 +928,6 @@
         <image name="menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="auB-WB-Bqg"/>
+        <segue reference="baW-W2-mUM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         FirebaseApp.configure()
-        /*
+        
+        
         if Auth.auth().currentUser != nil {
             print("ログインしてるよ")
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -38,35 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.backgroundColor = UIColor.white
             self.window?.makeKeyAndVisible()
         }
- */
+
+ 
         
         return true
+ 
+ 
         
-        /*
-        //ログイン状態でどのストーリーボードを出すか決める。それはユーザーデフォルツで管理する。
-        let ud = UserDefaults.standard
-        let isLogin = ud.bool(forKey: "isLogin")
-        
-        if isLogin == true{
-            //ログイン中だったら
-            print("ログインしてるよ")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabVarController")
-            self.window?.rootViewController = rootViewController
-            self.window?.backgroundColor = UIColor.white
-            self.window?.makeKeyAndVisible()
-        } else {
-            //ログインしてなかったら
-            print("ログインしてないよ")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main)
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
-            self.window?.rootViewController = rootViewController
-            self.window?.backgroundColor = UIColor.white
-            self.window?.makeKeyAndVisible()
-        }
- */
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

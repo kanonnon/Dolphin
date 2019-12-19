@@ -105,5 +105,8 @@ class OutlineMenuViewController: FormViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 

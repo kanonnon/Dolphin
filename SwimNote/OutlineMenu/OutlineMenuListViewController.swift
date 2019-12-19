@@ -52,7 +52,7 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 134
+        return 80
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +74,6 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
         cell.startTimeLabel.text = startTime?.toFormat("HH:mm")
         
         cell.placeLabel.text = records[indexPath.row].place
-        cell.poolTypeLabel.text = records[indexPath.row].poolType
         cell.lengthLabel.text = records[indexPath.row].length
         return cell
     }
@@ -91,6 +90,7 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
             let editOutlineViewController = segue.destination as! EditOutlineMenuViewController
             let selectedIndex = OutlineMenuListTableView.indexPathForSelectedRow!
             editOutlineViewController.selectedOutlineMenu = records[selectedIndex.row]
+            
         }
     }
     
@@ -106,7 +106,7 @@ class OutlineMenuListViewController: UIViewController, UITableViewDataSource, UI
                 
                 for (_, value) in data {
                     let record = OutlineMenu()
-                    
+                    record.id = self.ref.childByAutoId().key
                     record.date = value["date"] as! String
                     record.startTime = value["startTime"] as! String
                     record.endTime = value["endTime"] as! String

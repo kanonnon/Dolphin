@@ -14,7 +14,6 @@ class OutlineMenuListTableViewCell: UITableViewCell {
     @IBOutlet var startTimeLabel:UILabel!
     @IBOutlet var endTimeLabel:UILabel!
     @IBOutlet var placeLabel:UILabel!
-    @IBOutlet var poolTypeLabel:UILabel!
     @IBOutlet var lengthLabel: UILabel!
 
     override func awakeFromNib() {

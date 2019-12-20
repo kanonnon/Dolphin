@@ -17,6 +17,8 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
 
     var competitions = [Record]()
     
+    var selectedRecord: Record!
+    
     var ref: DatabaseReference!
 
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
         
          navigationItem.rightBarButtonItem = editButtonItem
          navigationItem.rightBarButtonItem?.title = "選択"
+        
         
         // 複数選択を有効にする
         createGraphTableView.allowsMultipleSelectionDuringEditing = true
@@ -52,6 +55,20 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         createGraphTableView.isEditing = editing
+        
+        if editing {
+            
+        } else {
+            self.performSegue(withIdentifier: "toNext", sender: nil)
+        }
+    }
+    //値渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEdit"{
+            let createDitailGraphViewController = segue.destination as! CreateDitailGraphViewController
+            let selectedIndex = createGraphTableView.indexPathForSelectedRow!
+            createDitailGraphViewController.selectedRecord = competitions[selectedIndex.row]
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,6 +139,8 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
+        
+    
     
 }
 extension ViewController: UITableViewDelegate {
@@ -135,3 +154,5 @@ extension ViewController: UITableViewDelegate {
         print("deselect - \(indexPath)")
     }
 }
+
+

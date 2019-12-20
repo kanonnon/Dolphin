@@ -84,7 +84,9 @@ class RecordViewController: FormViewController {
                     if let firstTimeValue = row.value {
                         if firstTimeValue != nil {
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                                 self.form.rowBy(tag: "firstRap")?.reload()
+                            if self.form.rowBy(tag: "firstRap")!.value! > 0{
+                                self.form.rowBy(tag: "firstRap")?.reload()
+                            }
                         }
                     }
                 })
@@ -102,9 +104,13 @@ class RecordViewController: FormViewController {
                     if let secondTimeValue = row.value{
                         if secondTimeValue != nil{
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                            self.form.rowBy(tag: "firstRap")?.reload()
+                            //if self.form.rowBy(tag: "firstRap")!.value! > 0{
+                                self.form.rowBy(tag: "firstRap")?.reload()
+                            //}
                             self.form.rowBy(tag: "secondRap")?.value = self.calcDiff2()
+                           // if self.form.rowBy(tag: "secondRap")!.value! > 0{
                             self.form.rowBy(tag: "secondRap")?.reload()
+                           // }
                         }
                     }
                 })

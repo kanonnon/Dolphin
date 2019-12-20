@@ -96,10 +96,10 @@ class EditOutlineMenuViewController: FormViewController {
         }
         
         form +++ ButtonRow() {
-            $0.title = "メニューの追加"
+            $0.title = "メニューの詳細"
             $0.onCellSelection { cell, row in
                 print("tapped")
-                self.performSegue(withIdentifier: "toTraining", sender: nil)
+                self.performSegue(withIdentifier: "toDitail", sender: nil)
             }
         }
         

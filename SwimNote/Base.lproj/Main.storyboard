@@ -112,7 +112,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="k7k-Qk-pfe" kind="show" identifier="toTraining" id="iyh-yA-huK"/>
+                        <segue destination="k7k-Qk-pfe" kind="show" identifier="toDitail" id="iyh-yA-huK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaO-v1-ApP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,7 +652,7 @@
         <!--グラフ-->
         <scene sceneID="1b2-IA-BzQ">
             <objects>
-                <viewController id="n5k-6G-lkN" customClass="GraphViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GraphViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n5k-6G-lkN" customClass="GraphViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CYV-EB-wvQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -702,11 +702,34 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createGraphTableView" destination="uAd-lp-TZn" id="VNA-WP-UVP"/>
+                        <segue destination="6Pn-Aj-rT1" kind="show" identifier="toNext" id="i2m-Zv-cgd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjk-dg-lUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6276" y="-5071.2143928035985"/>
+        </scene>
+        <!--グラフの詳細設定-->
+        <scene sceneID="T3Q-9b-LPQ">
+            <objects>
+                <viewController id="QfP-Pt-scq" customClass="CreateDitailGraphViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V2n-u4-6kb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4jc-60-hQf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="グラフの詳細設定" id="L1w-nB-KEV">
+                        <barButtonItem key="rightBarButtonItem" title="作成" id="zx2-dm-MRN">
+                            <connections>
+                                <action selector="save" destination="QfP-Pt-scq" id="RcM-rE-wOm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jz8-iX-xRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8287.2000000000007" y="-5071.2143928035985"/>
         </scene>
         <!--Join New Group View Controller-->
         <scene sceneID="Yh0-mX-hqR">
@@ -914,6 +937,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TP-kB-GYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3225" y="537"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HUV-oA-RH1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Pn-Aj-rT1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Flx-dJ-3Lz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.69108810750000005" green="0.9180667723" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QfP-Pt-scq" kind="relationship" relationship="rootViewController" id="idN-gN-Sav"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fon-bL-7Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7348" y="-5071.2143928035985"/>
         </scene>
     </scenes>
     <resources>

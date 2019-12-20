@@ -28,6 +28,11 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // キーボードを閉じる
+        view.endEditing(true)
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
         
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
@@ -56,5 +61,6 @@ class LoginViewController: UIViewController {
         }
     }
     
+  
     
 }

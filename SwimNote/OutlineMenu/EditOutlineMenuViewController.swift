@@ -38,15 +38,44 @@ class EditOutlineMenuViewController: FormViewController {
                 })
         
         form +++ Section("概要")
-            <<< DateRow("date") {
+            <<< TextRow("date") {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+                dateFormatter.locale = Locale(identifier: "ja_JP")
+                
+                let date = dateFormatter.date(from: selectedOutlineMenu.date!)
+                selectedOutlineMenu.date = date?.toFormat("yyyy年 MM月 dd日")
+                
                 $0.title = "日付"
+                $0.placeholder = "日付を入力"
+                $0.value = selectedOutlineMenu.date
             }
-            <<< TimeInlineRow("startTime") {
+            <<< TextRow("startTime") {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+                dateFormatter.locale = Locale(identifier: "ja_JP")
+                
+                let startTime = dateFormatter.date(from: selectedOutlineMenu.startTime!)
+                selectedOutlineMenu.startTime = startTime?.toFormat("HH:mm")
+                
                 $0.title = "開始時刻"
-            }
-            <<< TimeInlineRow("endTime") {
-                $0.title = "終了時刻"
-            }
+                $0.placeholder = "開始時刻を入力"
+                $0.value = selectedOutlineMenu.startTime
+                }
+            <<< TextRow("endTime") {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+                dateFormatter.locale = Locale(identifier: "ja_JP")
+                
+                if let endTimeString = selectedOutlineMenu.endTime {
+                    let endTime = dateFormatter.date(from: endTimeString)
+                    selectedOutlineMenu.endTime = endTime?.toFormat("HH:mm")
+                }
+                
+                    $0.title = "終了時刻"
+                    $0.placeholder = "終了時刻を入力"
+                    $0.value = selectedOutlineMenu.endTime
+                    }
             <<< TextRow("place") {
                 $0.title = "場所"
                 $0.placeholder = "プールの名前を入力"
@@ -73,7 +102,8 @@ class EditOutlineMenuViewController: FormViewController {
                 self.performSegue(withIdentifier: "toTraining", sender: nil)
             }
         }
-
+        
+        
     }
     
     func updateOutlineMenu() {
@@ -139,5 +169,7 @@ class EditOutlineMenuViewController: FormViewController {
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
 }

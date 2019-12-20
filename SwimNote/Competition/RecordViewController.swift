@@ -81,10 +81,10 @@ class RecordViewController: FormViewController {
                             print(timeValue[0] + "分" + timeValue[1] + "秒" +  timeValue[2])
                         }
                     }
-                    if let firstTimeValue = row.value{
-                        if firstTimeValue != nil{
+                    if let firstTimeValue = row.value {
+                        if firstTimeValue != nil {
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                            self.form.rowBy(tag: "firstRap")?.reload()
+                                 self.form.rowBy(tag: "firstRap")?.reload()
                         }
                     }
                 })

@@ -120,7 +120,6 @@
                         <outlet property="backImageView" destination="SWn-8J-h1B" id="7of-k7-WCJ"/>
                         <outlet property="email" destination="Zea-3m-VyK" id="WC2-Fa-Ikf"/>
                         <outlet property="password" destination="jqN-YL-WxK" id="i6f-oX-re0"/>
-                        <segue destination="hcc-7u-Ovf" kind="presentation" id="T2A-Go-q96"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMo-WX-EQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,6 +136,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0SL-Cg-XA6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL1-l7-xWN">
                                 <rect key="frame" x="171" y="469" width="33" height="32"/>
@@ -156,7 +156,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kS-ug-luX">
                                 <rect key="frame" x="79" y="330" width="216" height="40"/>
@@ -164,7 +164,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-t9-XrZ">
                                 <rect key="frame" x="79" y="410" width="216" height="40"/>
@@ -212,7 +212,7 @@
                         <outlet property="backImageView" destination="0SL-Cg-XA6" id="Olq-zw-3co"/>
                         <outlet property="email" destination="8LF-KS-tbk" id="6wu-A7-cSh"/>
                         <outlet property="password" destination="4kS-ug-luX" id="xRQ-wB-c48"/>
-                        <segue destination="hcc-7u-Ovf" kind="presentation" identifier="" id="tyJ-J7-skw"/>
+                        <segue destination="Fhw-nL-iWf" kind="show" id="QpC-5s-015"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MA-xW-0Oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,7 +340,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V5k-Cr-CF8">
                                 <rect key="frame" x="79" y="330" width="216" height="40"/>
@@ -348,7 +348,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21M-OU-LDM">
                                 <rect key="frame" x="79" y="410" width="216" height="40"/>
@@ -396,7 +396,6 @@
                         <outlet property="backImageView" destination="sj3-40-9rr" id="10W-I5-qAA"/>
                         <outlet property="email" destination="6ub-36-AEA" id="BYm-00-TMr"/>
                         <outlet property="password" destination="V5k-Cr-CF8" id="TxU-89-24n"/>
-                        <segue destination="kqr-GU-b70" kind="presentation" id="iUF-lc-6f9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1z-gi-X8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,7 +487,6 @@
                         <outlet property="backImageView" destination="EfG-TY-xLA" id="ygn-Q4-1cF"/>
                         <outlet property="email" destination="Plz-qV-GF7" id="QEU-gU-ws4"/>
                         <outlet property="password" destination="Bue-FP-VL6" id="6rn-Xy-MY1"/>
-                        <segue destination="kqr-GU-b70" kind="presentation" identifier="" id="e4r-R1-Z4K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v86-RZ-BLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -614,6 +612,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZRN-aY-R2r">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-5M-UrF">
                                 <rect key="frame" x="79" y="269" width="216" height="40"/>
@@ -677,7 +676,7 @@
                         <outlet property="backImageView" destination="ZRN-aY-R2r" id="siZ-Fm-ky0"/>
                         <outlet property="email" destination="Gkk-5M-UrF" id="cbZ-aG-uW7"/>
                         <outlet property="password" destination="V14-wo-A4x" id="KhT-Ap-ik7"/>
-                        <segue destination="Fhw-nL-iWf" kind="presentation" id="ICF-fY-K23"/>
+                        <segue destination="kqr-GU-b70" kind="show" id="C4p-PM-dtt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elc-Ay-0qF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -694,6 +693,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zmn-vQ-ih4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEr-BI-OoI">
                                 <rect key="frame" x="171" y="469" width="33" height="32"/>
@@ -769,7 +769,6 @@
                         <outlet property="backImageView" destination="zmn-vQ-ih4" id="6bt-qq-LqK"/>
                         <outlet property="email" destination="ee5-xv-6bb" id="8FN-n9-2l1"/>
                         <outlet property="password" destination="bjd-2o-Gd4" id="MAX-2l-3Pe"/>
-                        <segue destination="Fhw-nL-iWf" kind="presentation" identifier="" id="zm5-vd-FzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ph-6U-1Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -849,9 +848,4 @@
             <point key="canvasLocation" x="-3962" y="-1074"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="zm5-vd-FzI"/>
-        <segue reference="iUF-lc-6f9"/>
-        <segue reference="T2A-Go-q96"/>
-    </inferredMetricsTieBreakers>
 </document>

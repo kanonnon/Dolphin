@@ -28,6 +28,11 @@ class SignUpViewController: UIViewController {
         backImageView.image = image
 
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // キーボードを閉じる
+        view.endEditing(true)
+    }
+    
     @IBAction func signup(_ sender: Any) {
         
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
@@ -62,6 +67,6 @@ class SignUpViewController: UIViewController {
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
     }
-
+    
 
 }

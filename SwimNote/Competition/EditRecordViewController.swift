@@ -61,8 +61,17 @@ class EditRecordViewController: FormViewController {
                 $0.placeholder = "タイムを入力"
                 $0.value = selectedRecord.totalTime
             }
-            <<< DateRow("date") {
+            <<< TextRow("date") {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+                dateFormatter.locale = Locale(identifier: "ja_JP")
+                
+                let date = dateFormatter.date(from: selectedRecord.date!)
+                selectedRecord.date = date?.toFormat("yyyy年 MM月 dd日")
+                
                 $0.title = "日付"
+                $0.placeholder = "日付を入力"
+                $0.value = selectedRecord.date
             }
             <<< TextRow("competition") {
                 $0.title = "大会名"

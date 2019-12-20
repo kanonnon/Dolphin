@@ -112,17 +112,17 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="k7k-Qk-pfe" kind="show" id="iyh-yA-huK"/>
+                        <segue destination="k7k-Qk-pfe" kind="show" identifier="toTraining" id="iyh-yA-huK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaO-v1-ApP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2286" y="537"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Ditail Menu List Table View Controller-->
         <scene sceneID="uzE-em-0hi">
             <objects>
-                <viewController id="AWI-bI-hbD" sceneMemberID="viewController">
+                <viewController id="AWI-bI-hbD" customClass="EditDitailMenuListTableViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eX1-FD-iFX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="4164" y="537"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Ditail Menu View Controller-->
         <scene sceneID="I0h-EC-4CI">
             <objects>
-                <viewController id="Tgf-nT-9Zc" sceneMemberID="viewController">
+                <viewController id="Tgf-nT-9Zc" customClass="EditDitailMenuViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fEq-MD-Phz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -113,7 +113,7 @@ class EditOutlineMenuViewController: FormViewController {
         let endTime = formValues["endTime"] as! String
         let place = formValues["place"] as? String
         let poolType = formValues["poolType"] as? String
-        let length = formValues["length"] as? Date
+        let length = formValues["length"] as? String
         
         
         let menu = ["date": date.description,
@@ -132,7 +132,7 @@ class EditOutlineMenuViewController: FormViewController {
         let endTime = formValues["endTime"] as! String
         let place = formValues["place"] as? String
         let poolType = formValues["poolType"] as? String
-        let length = formValues["length"] as? Date
+        let length = formValues["length"] as? String
         
         let menu = ["date": date.description,
                     "startTime": startTime,

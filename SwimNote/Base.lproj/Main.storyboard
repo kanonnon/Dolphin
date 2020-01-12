@@ -288,7 +288,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1t-Nj-sdT">
-                                <rect key="frame" x="0.0" y="209" width="240" height="460"/>
+                                <rect key="frame" x="0.0" y="281" width="240" height="388"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -306,7 +306,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uo-xi-B5F">
-                                <rect key="frame" x="0.0" y="137" width="240" height="64"/>
+                                <rect key="frame" x="0.0" y="209" width="240" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="　新しくグループに入る" image="icons8-ユーザグループ追加-48.png.jpg">
@@ -326,6 +326,14 @@
                                 <connections>
                                     <segue destination="59t-dU-zCY" kind="show" id="Jcg-6B-iN4"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vc-Cb-jp9">
+                                <rect key="frame" x="0.0" y="137" width="240" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="　新しいグループを作る" image="icons8-group-layouts-48.png.jpg">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -959,6 +967,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-group-layouts-48.png.jpg" width="24" height="24"/>
         <image name="icons8-ゲスト男性-48.png.png" width="24" height="24"/>
         <image name="icons8-メダル-64.png.png" width="32" height="32"/>
         <image name="icons8-メニュー2-48.png.jpg" width="24" height="24"/>
@@ -970,6 +979,6 @@
         <image name="menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="baW-W2-mUM"/>
+        <segue reference="auB-WB-Bqg"/>
     </inferredMetricsTieBreakers>
 </document>

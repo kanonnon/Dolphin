@@ -84,9 +84,8 @@ class RecordViewController: FormViewController {
                     if let firstTimeValue = row.value {
                         if firstTimeValue != nil {
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                            if self.form.rowBy(tag: "firstRap")!.value! > 0{
                                 self.form.rowBy(tag: "firstRap")?.reload()
-                            }
+//                            }
                         }
                     }
                 })
@@ -104,13 +103,9 @@ class RecordViewController: FormViewController {
                     if let secondTimeValue = row.value{
                         if secondTimeValue != nil{
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                            //if self.form.rowBy(tag: "firstRap")!.value! > 0{
                                 self.form.rowBy(tag: "firstRap")?.reload()
-                            //}
                             self.form.rowBy(tag: "secondRap")?.value = self.calcDiff2()
-                           // if self.form.rowBy(tag: "secondRap")!.value! > 0{
                             self.form.rowBy(tag: "secondRap")?.reload()
-                           // }
                         }
                     }
                 })
@@ -246,10 +241,17 @@ class RecordViewController: FormViewController {
         let f_total_msec = (6000*f_min)+(100*f_sec)+(f_msec)
         let s_total_msec = (6000*s_min)+(100*s_sec)+(s_msec)
         
-        let total_msec = (s_total_msec)-(f_total_msec)
-        func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
-            return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+        
+        var total_msec = (s_total_msec)-(f_total_msec)
+        
+        if total_msec > 0{
+            func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
+                return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+            }
+        }else{
+           total_msec = 0
         }
+        
         if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
             let result = "\(total_msec / 6000).\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
             return result
@@ -310,10 +312,16 @@ class RecordViewController: FormViewController {
         let t_total_msec = (6000*t_min)+(100*t_sec)+(t_msec)
         let s_total_msec = (6000*s_min)+(100*s_sec)+(s_msec)
         
-        let total_msec = (t_total_msec)-(s_total_msec)
-        func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
+        var total_msec = (t_total_msec)-(s_total_msec)
+        
+        if total_msec > 0{
+            func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
             return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+            }
+        }else{
+            total_msec = 0
         }
+        
         if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
             let result = "\(total_msec / 6000).\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
             return result
@@ -375,10 +383,16 @@ class RecordViewController: FormViewController {
         let f_total_msec = (6000*f_min)+(100*f_sec)+(f_msec)
         let t_total_msec = (6000*t_min)+(100*t_sec)+(t_msec)
         
-        let total_msec = (f_total_msec)-(t_total_msec)
-        func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
+        var total_msec = (f_total_msec)-(t_total_msec)
+        
+        if total_msec > 0{
+            func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
             return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+            }
+        }else{
+            total_msec = 0
         }
+        
         if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
             let result = "\(total_msec / 6000).\((total_msec % 6000) / 100).\((total_msec % 6000) % 100)"
             return result
@@ -397,6 +411,7 @@ class RecordViewController: FormViewController {
     }
     
     func saveRecord() {
+        
         let formValues = self.form.values()
         let name = formValues["name"] as! String
         let style = formValues["style"] as! String

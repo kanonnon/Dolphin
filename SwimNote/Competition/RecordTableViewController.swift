@@ -54,7 +54,6 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
         return 80
     }
    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell") as! RecordTableViewCell
         

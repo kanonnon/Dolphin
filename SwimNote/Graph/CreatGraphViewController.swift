@@ -57,19 +57,22 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
         createGraphTableView.isEditing = editing
         
         if editing {
-            
+            //選択状態の時
         } else {
+            //doneを押した後
             self.performSegue(withIdentifier: "toNext", sender: nil)
         }
     }
+    
     //値渡し
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEdit"{
+        if segue.identifier == "toNext"{
             let createDitailGraphViewController = segue.destination as! CreateDitailGraphViewController
             let selectedIndex = createGraphTableView.indexPathForSelectedRow!
             createDitailGraphViewController.selectedRecord = competitions[selectedIndex.row]
         }
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return competitions.count
@@ -146,12 +149,13 @@ class CreatGraphViewController: UIViewController, UITableViewDataSource, UITable
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select - \(indexPath)")
-        
+        //セルが選択されたら
         
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print("deselect - \(indexPath)")
+        //セルの選択が解除されたら
     }
 }
 

@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="距離" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYX-lO-bBh">
-                        <rect key="frame" x="56" y="43" width="72" height="28"/>
+                        <rect key="frame" x="44" y="43" width="84" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,7 +72,7 @@
                 <outlet property="styleLabel" destination="mhD-8y-LUD" id="JL6-xt-hnu"/>
                 <outlet property="timeLabel" destination="lep-hi-XbS" id="8Ny-i2-9Mo"/>
             </connections>
-            <point key="canvasLocation" x="177.536231884058" y="91.40625"/>
+            <point key="canvasLocation" x="177.536231884058" y="91.071428571428569"/>
         </tableViewCell>
     </objects>
 </document>

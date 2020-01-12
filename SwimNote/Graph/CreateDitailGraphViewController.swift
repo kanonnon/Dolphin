@@ -39,7 +39,10 @@ class CreateDitailGraphViewController: FormViewController {
                 row.options = ["赤","ピンク","オレンジ","黄色","緑","水色","青"]
                 row.value = row.options.first
                 }.onChange {[unowned self] row in}
-            
+            <<< TextRow("text") {
+                $0.value = ""
+                
+        }
           
         
     }
@@ -65,6 +68,7 @@ class CreateDitailGraphViewController: FormViewController {
         let alertController = UIAlertController(title: "作成完了！", message:"グラフを作成しました。", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
             let storyboard: UIStoryboard = self.storyboard!
+            //二つ前の画面に戻る
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         })
         alertController.addAction(action)

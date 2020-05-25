@@ -20,13 +20,13 @@ class RecordViewController: FormViewController {
     
     var selectedImg = UIImage()
     var diff: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
         
-   
+        
         form +++ Section("概要")
             <<< TextRow("name") {
                 $0.title = "選手氏名"
@@ -36,7 +36,7 @@ class RecordViewController: FormViewController {
                 row.title = "種目"
                 row.options = ["Fr","Ba","Br","Fly","IM"]
                 row.value = row.options.first
-            }.onChange {[unowned self] row in}
+                }.onChange {[unowned self] row in}
             
             <<< PickerInlineRow<String>("length") { row in
                 row.title = "距離"
@@ -65,7 +65,7 @@ class RecordViewController: FormViewController {
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
-            }
+        }
         form +++ Section("タイム詳細")
             <<< TextRow("reactionTime") {
                 $0.title = "ﾘｱｸｼｮﾝﾀｲﾑ"
@@ -84,8 +84,8 @@ class RecordViewController: FormViewController {
                     if let firstTimeValue = row.value {
                         if firstTimeValue != nil {
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                                self.form.rowBy(tag: "firstRap")?.reload()
-//                            }
+                            self.form.rowBy(tag: "firstRap")?.reload()
+                            //                            }
                         }
                     }
                 })
@@ -103,7 +103,7 @@ class RecordViewController: FormViewController {
                     if let secondTimeValue = row.value{
                         if secondTimeValue != nil{
                             self.form.rowBy(tag: "firstRap")?.value = self.calcDiff1()
-                                self.form.rowBy(tag: "firstRap")?.reload()
+                            self.form.rowBy(tag: "firstRap")?.reload()
                             self.form.rowBy(tag: "secondRap")?.value = self.calcDiff2()
                             self.form.rowBy(tag: "secondRap")?.reload()
                         }
@@ -167,7 +167,7 @@ class RecordViewController: FormViewController {
                 }.onCellSelection({ (cell, row) in
                     print("tap!!!!!!")
                 })
-
+        
         
         
         form +++ Section("コンディション")
@@ -177,25 +177,25 @@ class RecordViewController: FormViewController {
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
-                }
+            }
             <<< SegmentedRow<String>("motivation"){
                 $0.options = ["良い", "普通","悪い"]
                 $0.title = "モチベーション                  "
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
-                }
+            }
             <<< SegmentedRow<String>("physicalCondition"){
                 $0.options = ["良い", "普通","悪い"]
                 $0.title = "体調                                    "
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
-                }
-            form +++ Section("メモ")
+        }
+        form +++ Section("メモ")
             <<< TextAreaRow("memo") { row in
                 row.title = "メモ"
-                }
+        }
         
     }
     func calcDiff1() -> String {
@@ -249,7 +249,7 @@ class RecordViewController: FormViewController {
                 return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
             }
         }else{
-           total_msec = 0
+            total_msec = 0
         }
         
         if (total_msec % 6000) / 100 > 9 && (total_msec % 6000) % 100 > 9{
@@ -316,7 +316,7 @@ class RecordViewController: FormViewController {
         
         if total_msec > 0{
             func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
-            return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+                return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
             }
         }else{
             total_msec = 0
@@ -339,7 +339,7 @@ class RecordViewController: FormViewController {
         print(total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
     }
     
-
+    
     func calcDiff3() -> String {
         let formValues = self.form.values()
         let thirdTime = formValues["thirdTime"] as? String
@@ -387,7 +387,7 @@ class RecordViewController: FormViewController {
         
         if total_msec > 0{
             func millisecondsToMinutesSecondsMilliseconds (seconds : Int) -> (Int, Int, Int) {
-            return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
+                return (total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
             }
         }else{
             total_msec = 0
@@ -406,7 +406,7 @@ class RecordViewController: FormViewController {
             let result4 = "\(total_msec / 6000).0\((total_msec % 6000) / 100).0\((total_msec % 6000) % 100)"
             return result4
         }
-    
+        
         print(total_msec / 6000, (total_msec % 6000) / 100, (total_msec % 6000) % 100)
     }
     
@@ -454,7 +454,7 @@ class RecordViewController: FormViewController {
                     "motivation": motivation,
                     "physicalCondition": physicalCondition,
                     "memo": memo] as [String : Any]
-            
+        
         self.ref.child("competition").childByAutoId().setValue(menu)
     }
     
@@ -468,6 +468,6 @@ class RecordViewController: FormViewController {
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
     }
-   
+    
 }
 

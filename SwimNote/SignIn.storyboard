@@ -212,7 +212,6 @@
                         <outlet property="backImageView" destination="0SL-Cg-XA6" id="Olq-zw-3co"/>
                         <outlet property="email" destination="8LF-KS-tbk" id="6wu-A7-cSh"/>
                         <outlet property="password" destination="4kS-ug-luX" id="xRQ-wB-c48"/>
-                        <segue destination="Fhw-nL-iWf" kind="show" id="QpC-5s-015"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MA-xW-0Oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zL-gd-XmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3962" y="-298"/>
+            <point key="canvasLocation" x="-5698" y="-215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xif-XF-r5K">
@@ -289,7 +288,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2l-G0-pc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3962" y="-1074"/>
+            <point key="canvasLocation" x="-5698" y="-991"/>
         </scene>
         <!--Dolpin-->
         <scene sceneID="1El-wB-ep1">
@@ -525,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtu-08-91I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3962" y="-298"/>
+            <point key="canvasLocation" x="-5698" y="-215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sI5-J4-ngf">
@@ -563,7 +562,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZv-SF-VsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3962" y="-1074"/>
+            <point key="canvasLocation" x="-5698" y="-991"/>
         </scene>
         <!--Dolpin-->
         <scene sceneID="yiK-HE-MDm">
@@ -676,7 +675,6 @@
                         <outlet property="backImageView" destination="ZRN-aY-R2r" id="siZ-Fm-ky0"/>
                         <outlet property="email" destination="Gkk-5M-UrF" id="cbZ-aG-uW7"/>
                         <outlet property="password" destination="V14-wo-A4x" id="KhT-Ap-ik7"/>
-                        <segue destination="kqr-GU-b70" kind="show" id="C4p-PM-dtt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elc-Ay-0qF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -807,7 +805,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KT3-en-FXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3962" y="-298"/>
+            <point key="canvasLocation" x="-5698" y="-215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rXl-f8-jTL">
@@ -845,7 +843,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tys-Fi-j1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3962" y="-1074"/>
+            <point key="canvasLocation" x="-5698" y="-991"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="KaK-Bw-Kif">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Svv-Lw-5Zr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuS-hf-Bsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4435" y="-1321"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="6LP-0o-0s6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="e1H-Tm-uaV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMc-YD-SUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3509" y="-1321"/>
         </scene>
     </scenes>
 </document>

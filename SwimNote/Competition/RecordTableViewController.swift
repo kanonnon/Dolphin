@@ -20,7 +20,7 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
     var key: String!
     
     var ref: DatabaseReference!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +53,7 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell") as! RecordTableViewCell
         
@@ -128,14 +128,14 @@ class RecordTableViewController: UIViewController, UITableViewDataSource, UITabl
                     record.motivation = value[Record.field.motivation.rawValue]
                     record.physicalCondition = value[Record.field.physicalCondition.rawValue]
                     record.memo = value[Record.field.memo.rawValue]
-                 
-                
+                    
+                    
                     self.competitions.append(record)
                 }
                 self.recordListTableView.reloadData()
                 self.recordListTableView.headRefreshControl.endRefreshing()
             }
         }
-    
+        
     }
 }

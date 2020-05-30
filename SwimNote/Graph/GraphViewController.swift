@@ -60,9 +60,6 @@ class GraphViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func back(){
-        self.dismiss(animated: true, completion: nil)
-    }
     
 
     func loadRecords() {

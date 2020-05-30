@@ -65,19 +65,19 @@ class EditRecordViewController: FormViewController {
 ////                $0.title = "日付"
 ////                $0.value = selectedRecord.date
 //            }
-//            <<< TextRow("date") {
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
-//                dateFormatter.locale = Locale(identifier: "ja_JP")
-//
-                //let date = dateFormatter.date(from: selectedRecord.date!)
-                //selectedRecord.date = date!.toFormat("yyyy年 MM月 dd日")
+            <<< TextRow("date") {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+                dateFormatter.locale = Locale(identifier: "ja_JP")
+
+                let date = dateFormatter.date(from: selectedRecord.date!)
+                selectedRecord.date = date!.toFormat("yyyy年 MM月 dd日")
                 
                 
-//                $0.title = "日付"
-//                $0.placeholder = "日付を入力"
-//                $0.value = selectedRecord.date
-//            }
+                $0.title = "日付"
+                $0.placeholder = "日付を入力"
+                $0.value = selectedRecord.date
+            }
             <<< TextRow("competition") {
                 $0.title = "大会名"
                 $0.placeholder = "大会名を入力"
@@ -465,7 +465,7 @@ class EditRecordViewController: FormViewController {
         let length = formValues["length"] as! String
         let totalTime = formValues["totalTime"] as! String
         let competition = formValues["competition"] as? String
-        let date = formValues["date"] as! Date
+        let date = formValues["date"] as! String
         let place = formValues["place"] as? String
         let poolType = formValues["poolType"] as! String
         let reactionTime = formValues["reactionTime"] as? String
@@ -481,13 +481,14 @@ class EditRecordViewController: FormViewController {
         let physicalCondition = formValues["physicalCondition"] as? String
         let memo = formValues["memo"] as? String
         
+        let changeDate = DateUtils.dateFromString(string: date, format: "yyyy年 MM月 dd日")
         
         let menu = ["name": name,
                     "style": style,
                     "length": length,
                     "totalTime": totalTime,
                     "competition": competition,
-                    "date": date.description,
+                    "date": changeDate,
                     "place": place,
                     "poolType": poolType,
                     "reactionTime": reactionTime,

@@ -19,6 +19,14 @@ class AddMenuViewController: FormViewController {
     
     var ref: DatabaseReference!
     
+    var distance :Int = 0
+    
+    var times :Int = 0
+    
+    var sets = 0
+    
+    var calcTotalDistance = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,22 +55,39 @@ class AddMenuViewController: FormViewController {
                 $0.title = "距離"
                 $0.placeholder = "m"
                 self.SaveCode.keyboardType = UIKeyboardType.numberPad
-            }
+                }.onChange({[unowned self] (row) in
+                    if let distanceValue = row.value {
+                        self.distance = Int(distanceValue)!
+                        self.form.rowBy(tag: "totalLength")?.value = self.calcDistance()
+                        self.form.rowBy(tag: "totalLength")?.reload()
+                    }
+                })
             <<< TextRow("times") {
                 $0.title = "本数"
                 $0.placeholder = "本"
                 self.SaveCode.keyboardType = UIKeyboardType.numberPad
-            }
+                }.onChange({[unowned self] (row) in
+                    if let timesValue = row.value {
+                        self.times = Int(timesValue)!
+                        self.form.rowBy(tag: "totalLength")?.value = self.calcDistance()
+                        self.form.rowBy(tag: "totalLength")?.reload()
+                    }
+                })
             <<< TextRow("sets") {
                 $0.title = "セット数"
                 $0.placeholder = "セット"
                 self.SaveCode.keyboardType = UIKeyboardType.numberPad
-            }
+                }.onChange({[unowned self] (row) in
+                    if let setsValue = row.value {
+                        self.sets = Int(setsValue)!
+                        self.form.rowBy(tag: "totalLength")?.value = self.calcDistance()
+                        self.form.rowBy(tag: "totalLength")?.reload()
+                    }
+                })
             <<< TextRow("totalLength") {
                 $0.title = "合計距離"
                 $0.placeholder = "m"
-                //$0.value = 
-            }
+                }
             <<< TextRow("circle") {
                 $0.title = "サークル"
                 $0.placeholder = "サークルを入力"
@@ -86,6 +111,10 @@ class AddMenuViewController: FormViewController {
     
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func calcDistance()->String{
+    return String(self.distance * self.times * self.sets)
     }
     
     func saveMenu() {

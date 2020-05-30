@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyPage: NSObject {
+class MyPSetValueage: NSObject {
     
     var id: String?
     var userName: String?

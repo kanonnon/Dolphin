@@ -5,7 +5,6 @@
 //  Created by 雨宮佳音 on 2019/08/11.
 //  Copyright © 2019 kanon. All rights reserved.
 
-//合計距離をAddMenuViewControllerで入力したメニューをもとに自動的に計算して欲しい。
 
 import UIKit
 import Eureka
@@ -17,6 +16,8 @@ class OutlineMenuViewController: FormViewController {
     @IBOutlet weak var SaveCode: UITextField!
     
     var selectedImg = UIImage()
+    
+    var selectedSetValue: SetValue!
     
     var ref: DatabaseReference!
     
@@ -39,10 +40,12 @@ class OutlineMenuViewController: FormViewController {
             <<< TextRow("place") {
                 $0.title = "場所"
                 $0.placeholder = "プールの名前を入力"
+                //$0.value = selectedSetValue.place
             }
             <<< SegmentedRow<String>("poolType") {
                 $0.options = ["短水路", "長水路"]
                 $0.title = "プールの長さ                        "
+                //$0.value = selectedSetValue.poolType
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")
@@ -63,7 +66,6 @@ class OutlineMenuViewController: FormViewController {
     }
     
     func saveMenu() {
-        //TODO: - 頑張る
         let ud = UserDefaults.standard
         let formValues = self.form.values()
         let date = formValues["date"] as! Date

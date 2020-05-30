@@ -12,34 +12,20 @@
 		68012D2A23A4A0AA0000D35F /* CreatGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */; };
 		68012D2D23A4A61F0000D35F /* CreatGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */; };
 		68012D2E23A4A61F0000D35F /* CreatGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */; };
-		6801B0D123AB51D900FBF270 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801B0D023AB51D900FBF270 /* MyPage.swift */; };
 		6801B0D323AB66E900FBF270 /* OutlineMenuListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6801B0D223AB66E900FBF270 /* OutlineMenuListTableViewCell.xib */; };
 		6801B0D523AC6F6400FBF270 /* EditDitailMenuListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801B0D423AC6F6400FBF270 /* EditDitailMenuListTableViewController.swift */; };
 		6801B0DB23AC6FDB00FBF270 /* EditDitailMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801B0D923AC6FDB00FBF270 /* EditDitailMenuTableViewCell.swift */; };
 		6801B0DC23AC6FDB00FBF270 /* EditDitailMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6801B0DA23AC6FDB00FBF270 /* EditDitailMenuTableViewCell.xib */; };
 		6801B0DE23ACB68C00FBF270 /* CreateDitailGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801B0DD23ACB68C00FBF270 /* CreateDitailGraphViewController.swift */; };
-		6801BADD232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */; };
 		68049E2023AE74720060CD9C /* GraphNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68049E1F23AE74720060CD9C /* GraphNavigationViewController.swift */; };
 		6808E3DB239D3E83001C7A3C /* EditRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */; };
 		680FBAC02309424000B2B097 /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FBABF2309424000B2B097 /* AddMenuViewController.swift */; };
 		680FBAC323094E2900B2B097 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FBAC123094E2900B2B097 /* SampleTableViewCell.swift */; };
 		680FBAC423094E2900B2B097 /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 680FBAC223094E2900B2B097 /* SampleTableViewCell.xib */; };
-		688F3270232E25580072B240 /* FriendPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F326E232E25580072B240 /* FriendPageTableViewCell.swift */; };
-		688F3271232E25580072B240 /* FriendPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 688F326F232E25580072B240 /* FriendPageTableViewCell.xib */; };
-		689589AE239E3C3100A157DD /* icons8-棒グラフ-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589AB239E3C2F00A157DD /* icons8-棒グラフ-48.png@2x.jpg */; };
-		689589AF239E3C3100A157DD /* icons8-設定-64.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589AC239E3C3000A157DD /* icons8-設定-64.png@2x.jpg */; };
-		689589B0239E3C3100A157DD /* icons8-メニュー2-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589AD239E3C3100A157DD /* icons8-メニュー2-48.png@2x.jpg */; };
-		689589B2239E42A100A157DD /* FinalMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689589B1239E42A100A157DD /* FinalMenuViewController.swift */; };
-		689589B6239E434F00A157DD /* FinalMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689589B4239E434F00A157DD /* FinalMenuTableViewCell.swift */; };
-		689589B7239E434F00A157DD /* FinalMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689589B5239E434F00A157DD /* FinalMenuTableViewCell.xib */; };
-		689589B9239E5A4100A157DD /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689589B8239E5A4100A157DD /* IntroduceViewController.swift */; };
-		689589BE239E6FB100A157DD /* icons8-メール-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589BA239E6FAF00A157DD /* icons8-メール-48.png@2x.jpg */; };
+		684F277524779FBC00A320CC /* menu-configration@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 684F277424779FBB00A320CC /* menu-configration@2x.jpg */; };
+		684F27772477A6C600A320CC /* SetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684F27762477A6C600A320CC /* SetValue.swift */; };
+		6879E22423CF1252002872DF /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879E22323CF1252002872DF /* DateUtils.swift */; };
 		689589BF239E6FB100A157DD /* icons8-twitter-(四角)-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589BB239E6FB000A157DD /* icons8-twitter-(四角)-48.png@2x.jpg */; };
-		689589C0239E6FB100A157DD /* icons8-apple-app-store-100.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589BC239E6FB000A157DD /* icons8-apple-app-store-100.png@2x.jpg */; };
-		689589C1239E6FB100A157DD /* icons8-コピー-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589BD239E6FB100A157DD /* icons8-コピー-48.png@2x.jpg */; };
-		689589C3239E718300A157DD /* icons8-質問する-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589C2239E718300A157DD /* icons8-質問する-48.png@2x.jpg */; };
-		689589C5239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689589C4239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg */; };
-		689589C8239E920A00A157DD /* JoinNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689589C7239E920A00A157DD /* JoinNewGroupViewController.swift */; };
 		68A239C223000BFA00F285F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A239C123000BFA00F285F7 /* AppDelegate.swift */; };
 		68A239C723000BFA00F285F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A239C523000BFA00F285F7 /* Main.storyboard */; };
 		68A239C923000BFD00F285F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A239C823000BFD00F285F7 /* Assets.xcassets */; };
@@ -47,10 +33,12 @@
 		68A239D423000FDC00F285F7 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A239D323000FDC00F285F7 /* TrainingViewController.swift */; };
 		68A239D623000FF800F285F7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A239D523000FF800F285F7 /* RecordViewController.swift */; };
 		68A239DA2300225100F285F7 /* OutlineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A239D92300225100F285F7 /* OutlineMenuViewController.swift */; };
+		68BE2FFA247640F900F83314 /* tabbar-graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BE2FF9247640F900F83314 /* tabbar-graph@2x.png */; };
+		68BE2FFC2476445300F83314 /* menu-user@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 68BE2FFB2476445300F83314 /* menu-user@2x.JPG */; };
+		68BE2FFE247646DF00F83314 /* menu-question@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68BE2FFD247646DF00F83314 /* menu-question@2x.jpg */; };
+		68BE300024764AA600F83314 /* tabbar-medal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BE2FFF24764AA600F83314 /* tabbar-medal@2x.png */; };
+		68BE3004247652A700F83314 /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BE3003247652A700F83314 /* HowToUseViewController.swift */; };
 		68D0833A23ADECDA0085AD49 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0833923ADECDA0085AD49 /* Graph.swift */; };
-		68D0833C23AE04E40085AD49 /* icons8-group-layouts-48.png@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68D0833B23AE04E40085AD49 /* icons8-group-layouts-48.png@2x.jpg */; };
-		68D0834223AE06D40085AD49 /* HamburgerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0834023AE06D40085AD49 /* HamburgerTableViewCell.swift */; };
-		68D0834323AE06D40085AD49 /* HamburgerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D0834123AE06D40085AD49 /* HamburgerTableViewCell.xib */; };
 		68DDF716232BCC4500DAF474 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DDF714232BCC4500DAF474 /* RecordTableViewCell.swift */; };
 		68DDF717232BCC4500DAF474 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DDF715232BCC4500DAF474 /* RecordTableViewCell.xib */; };
 		68DDF719232BD28800DAF474 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DDF718232BD28800DAF474 /* Record.swift */; };
@@ -86,12 +74,10 @@
 		68F8C68E239FF49C00FFE6C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8C68D239FF49C00FFE6C5 /* RegisterViewController.swift */; };
 		68F8C690239FFF7500FFE6C5 /* MANIFESTO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68F8C68F239FFED600FFE6C5 /* MANIFESTO.ttf */; };
 		68F8C69423A0065000FFE6C5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8C69323A0065000FFE6C5 /* StartViewController.swift */; };
-		68F994BF23099F0600A5898B /* icons8-メダル-64.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F994BD23099F0500A5898B /* icons8-メダル-64.png@2x.png */; };
 		68F994C023099F0600A5898B /* icons8-水泳-50.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F994BE23099F0600A5898B /* icons8-水泳-50.png@2x.png */; };
 		68FAF7A6232E0DB200E00239 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FAF7A5232E0DB200E00239 /* GraphViewController.swift */; };
-		68FAF7A8232E0DD300E00239 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FAF7A7232E0DD300E00239 /* HomeViewController.swift */; };
 		68FB02F52376868E00379D9D /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB02F42376868E00379D9D /* HamburgerViewController.swift */; };
-		68FD90702333AE1200F5EE57 /* EditMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */; };
+		68FD90702333AE1200F5EE57 /* SetValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD906F2333AE1200F5EE57 /* SetValueViewController.swift */; };
 		68FF6E1723124D0300DFE0E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68FF6E1623124D0300DFE0E4 /* GoogleService-Info.plist */; };
 		68FF6E1923127E5D00DFE0E4 /* OutlineMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */; };
 		68FF6E1C23127E7500DFE0E4 /* OutlineMenuListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF6E1A23127E7400DFE0E4 /* OutlineMenuListTableViewCell.swift */; };
@@ -106,34 +92,20 @@
 		68012D2923A4A0AA0000D35F /* CreatGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatGraphViewController.swift; sourceTree = "<group>"; };
 		68012D2B23A4A61F0000D35F /* CreatGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatGraphTableViewCell.swift; sourceTree = "<group>"; };
 		68012D2C23A4A61F0000D35F /* CreatGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatGraphTableViewCell.xib; sourceTree = "<group>"; };
-		6801B0D023AB51D900FBF270 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		6801B0D223AB66E900FBF270 /* OutlineMenuListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutlineMenuListTableViewCell.xib; sourceTree = "<group>"; };
 		6801B0D423AC6F6400FBF270 /* EditDitailMenuListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDitailMenuListTableViewController.swift; sourceTree = "<group>"; };
 		6801B0D923AC6FDB00FBF270 /* EditDitailMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDitailMenuTableViewCell.swift; sourceTree = "<group>"; };
 		6801B0DA23AC6FDB00FBF270 /* EditDitailMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDitailMenuTableViewCell.xib; sourceTree = "<group>"; };
 		6801B0DD23ACB68C00FBF270 /* CreateDitailGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDitailGraphViewController.swift; sourceTree = "<group>"; };
-		6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ゲスト男性-48.png@2x.png"; sourceTree = "<group>"; };
 		68049E1F23AE74720060CD9C /* GraphNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNavigationViewController.swift; sourceTree = "<group>"; };
 		6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewController.swift; sourceTree = "<group>"; };
 		680FBABF2309424000B2B097 /* AddMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		680FBAC123094E2900B2B097 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 		680FBAC223094E2900B2B097 /* SampleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTableViewCell.xib; sourceTree = "<group>"; };
-		688F326E232E25580072B240 /* FriendPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPageTableViewCell.swift; sourceTree = "<group>"; };
-		688F326F232E25580072B240 /* FriendPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendPageTableViewCell.xib; sourceTree = "<group>"; };
-		689589AB239E3C2F00A157DD /* icons8-棒グラフ-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-棒グラフ-48.png@2x.jpg"; sourceTree = "<group>"; };
-		689589AC239E3C3000A157DD /* icons8-設定-64.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-設定-64.png@2x.jpg"; sourceTree = "<group>"; };
-		689589AD239E3C3100A157DD /* icons8-メニュー2-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-メニュー2-48.png@2x.jpg"; sourceTree = "<group>"; };
-		689589B1239E42A100A157DD /* FinalMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalMenuViewController.swift; sourceTree = "<group>"; };
-		689589B4239E434F00A157DD /* FinalMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalMenuTableViewCell.swift; sourceTree = "<group>"; };
-		689589B5239E434F00A157DD /* FinalMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalMenuTableViewCell.xib; sourceTree = "<group>"; };
-		689589B8239E5A4100A157DD /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
-		689589BA239E6FAF00A157DD /* icons8-メール-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-メール-48.png@2x.jpg"; sourceTree = "<group>"; };
+		684F277424779FBB00A320CC /* menu-configration@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menu-configration@2x.jpg"; sourceTree = "<group>"; };
+		684F27762477A6C600A320CC /* SetValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetValue.swift; sourceTree = "<group>"; };
+		6879E22323CF1252002872DF /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		689589BB239E6FB000A157DD /* icons8-twitter-(四角)-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-twitter-(四角)-48.png@2x.jpg"; sourceTree = "<group>"; };
-		689589BC239E6FB000A157DD /* icons8-apple-app-store-100.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-apple-app-store-100.png@2x.jpg"; sourceTree = "<group>"; };
-		689589BD239E6FB100A157DD /* icons8-コピー-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-コピー-48.png@2x.jpg"; sourceTree = "<group>"; };
-		689589C2239E718300A157DD /* icons8-質問する-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-質問する-48.png@2x.jpg"; sourceTree = "<group>"; };
-		689589C4239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-ユーザグループ追加-48.png@2x.jpg"; sourceTree = "<group>"; };
-		689589C7239E920A00A157DD /* JoinNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinNewGroupViewController.swift; sourceTree = "<group>"; };
 		68A239BE23000BFA00F285F7 /* SwimNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A239C123000BFA00F285F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A239C623000BFA00F285F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,10 +115,12 @@
 		68A239D323000FDC00F285F7 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		68A239D523000FF800F285F7 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		68A239D92300225100F285F7 /* OutlineMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenuViewController.swift; sourceTree = "<group>"; };
+		68BE2FF9247640F900F83314 /* tabbar-graph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-graph@2x.png"; sourceTree = "<group>"; };
+		68BE2FFB2476445300F83314 /* menu-user@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menu-user@2x.JPG"; sourceTree = "<group>"; };
+		68BE2FFD247646DF00F83314 /* menu-question@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menu-question@2x.jpg"; sourceTree = "<group>"; };
+		68BE2FFF24764AA600F83314 /* tabbar-medal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-medal@2x.png"; sourceTree = "<group>"; };
+		68BE3003247652A700F83314 /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
 		68D0833923ADECDA0085AD49 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		68D0833B23AE04E40085AD49 /* icons8-group-layouts-48.png@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icons8-group-layouts-48.png@2x.jpg"; sourceTree = "<group>"; };
-		68D0834023AE06D40085AD49 /* HamburgerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerTableViewCell.swift; sourceTree = "<group>"; };
-		68D0834123AE06D40085AD49 /* HamburgerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerTableViewCell.xib; sourceTree = "<group>"; };
 		68DDF714232BCC4500DAF474 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		68DDF715232BCC4500DAF474 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
 		68DDF718232BD28800DAF474 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
@@ -182,12 +156,10 @@
 		68F8C68D239FF49C00FFE6C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
 		68F8C68F239FFED600FFE6C5 /* MANIFESTO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MANIFESTO.ttf; sourceTree = "<group>"; };
 		68F8C69323A0065000FFE6C5 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		68F994BD23099F0500A5898B /* icons8-メダル-64.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-メダル-64.png@2x.png"; sourceTree = "<group>"; };
 		68F994BE23099F0600A5898B /* icons8-水泳-50.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-水泳-50.png@2x.png"; sourceTree = "<group>"; };
 		68FAF7A5232E0DB200E00239 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
-		68FAF7A7232E0DD300E00239 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		68FB02F42376868E00379D9D /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
-		68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyPageViewController.swift; sourceTree = "<group>"; };
+		68FD906F2333AE1200F5EE57 /* SetValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetValueViewController.swift; sourceTree = "<group>"; };
 		68FF6E1623124D0300DFE0E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68FF6E1823127E5D00DFE0E4 /* OutlineMenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenuListViewController.swift; sourceTree = "<group>"; };
 		68FF6E1A23127E7400DFE0E4 /* OutlineMenuListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineMenuListTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,36 +190,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		688F3272232E255E0072B240 /* Member */ = {
-			isa = PBXGroup;
-			children = (
-				68FAF7A7232E0DD300E00239 /* HomeViewController.swift */,
-				688F326E232E25580072B240 /* FriendPageTableViewCell.swift */,
-				688F326F232E25580072B240 /* FriendPageTableViewCell.xib */,
-			);
-			path = Member;
-			sourceTree = "<group>";
-		};
-		689589B3239E42AF00A157DD /* FinalMenu */ = {
-			isa = PBXGroup;
-			children = (
-				689589B1239E42A100A157DD /* FinalMenuViewController.swift */,
-				689589B4239E434F00A157DD /* FinalMenuTableViewCell.swift */,
-				689589B5239E434F00A157DD /* FinalMenuTableViewCell.xib */,
-				689589B8239E5A4100A157DD /* IntroduceViewController.swift */,
-			);
-			path = FinalMenu;
-			sourceTree = "<group>";
-		};
-		689589C6239E91A000A157DD /* JoinNewGroup */ = {
-			isa = PBXGroup;
-			children = (
-				689589C7239E920A00A157DD /* JoinNewGroupViewController.swift */,
-			);
-			name = JoinNewGroup;
-			path = FinalMenu/JoinNewGroup;
-			sourceTree = "<group>";
-		};
 		68A239B523000BFA00F285F7 = {
 			isa = PBXGroup;
 			children = (
@@ -274,10 +216,10 @@
 				68A239C123000BFA00F285F7 /* AppDelegate.swift */,
 				68F8C69223A0036800FFE6C5 /* Tutorial */,
 				68FE486A2379AA54007CF6E3 /* Hamburger */,
-				688F3272232E255E0072B240 /* Member */,
 				68FAF7A1232E0CDC00E00239 /* Competition */,
 				68FAF79E232E0C6600E00239 /* OutlineMenu */,
 				68FAF79F232E0C8900E00239 /* DetailMenu */,
+				68FC6ABD2334D8B1005D9B61 /* Graph */,
 				68A239C523000BFA00F285F7 /* Main.storyboard */,
 				68F0C39023A113EC00822685 /* SignIn.storyboard */,
 				68A239C823000BFD00F285F7 /* Assets.xcassets */,
@@ -372,6 +314,7 @@
 				68DDF714232BCC4500DAF474 /* RecordTableViewCell.swift */,
 				68DDF715232BCC4500DAF474 /* RecordTableViewCell.xib */,
 				6808E3DA239D3E83001C7A3C /* EditRecordViewController.swift */,
+				6879E22323CF1252002872DF /* DateUtils.swift */,
 			);
 			path = Competition;
 			sourceTree = "<group>";
@@ -382,19 +325,13 @@
 				68F0C36223A1070300822685 /* ios */,
 				68F8C68F239FFED600FFE6C5 /* MANIFESTO.ttf */,
 				68F8C68B239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png */,
-				6801BADC232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png */,
 				68F994BE23099F0600A5898B /* icons8-水泳-50.png@2x.png */,
-				68F994BD23099F0500A5898B /* icons8-メダル-64.png@2x.png */,
-				689589AD239E3C3100A157DD /* icons8-メニュー2-48.png@2x.jpg */,
-				689589AC239E3C3000A157DD /* icons8-設定-64.png@2x.jpg */,
-				689589AB239E3C2F00A157DD /* icons8-棒グラフ-48.png@2x.jpg */,
-				689589C4239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg */,
-				689589BC239E6FB000A157DD /* icons8-apple-app-store-100.png@2x.jpg */,
+				68BE2FFF24764AA600F83314 /* tabbar-medal@2x.png */,
+				68BE2FF9247640F900F83314 /* tabbar-graph@2x.png */,
+				684F277424779FBB00A320CC /* menu-configration@2x.jpg */,
+				68BE2FFB2476445300F83314 /* menu-user@2x.JPG */,
+				68BE2FFD247646DF00F83314 /* menu-question@2x.jpg */,
 				689589BB239E6FB000A157DD /* icons8-twitter-(四角)-48.png@2x.jpg */,
-				689589BD239E6FB100A157DD /* icons8-コピー-48.png@2x.jpg */,
-				689589BA239E6FAF00A157DD /* icons8-メール-48.png@2x.jpg */,
-				689589C2239E718300A157DD /* icons8-質問する-48.png@2x.jpg */,
-				68D0833B23AE04E40085AD49 /* icons8-group-layouts-48.png@2x.jpg */,
 				68F0C35C23A0B8FD00822685 /* tutorialImage1.PNG */,
 				68F0C35A23A0B8FD00822685 /* tutorialImage2.PNG */,
 				68F0C35B23A0B8FD00822685 /* tutorialImage3.PNG */,
@@ -413,15 +350,14 @@
 				6801B0DD23ACB68C00FBF270 /* CreateDitailGraphViewController.swift */,
 				68D0833923ADECDA0085AD49 /* Graph.swift */,
 			);
-			name = Graph;
-			path = ../Graph;
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		68FD90712333AE2100F5EE57 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				68FD906F2333AE1200F5EE57 /* EditMyPageViewController.swift */,
-				6801B0D023AB51D900FBF270 /* MyPage.swift */,
+				68FD906F2333AE1200F5EE57 /* SetValueViewController.swift */,
+				684F27762477A6C600A320CC /* SetValue.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -430,12 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				68FB02F42376868E00379D9D /* HamburgerViewController.swift */,
-				68D0834023AE06D40085AD49 /* HamburgerTableViewCell.swift */,
-				68D0834123AE06D40085AD49 /* HamburgerTableViewCell.xib */,
-				68FC6ABD2334D8B1005D9B61 /* Graph */,
+				68BE3003247652A700F83314 /* HowToUseViewController.swift */,
 				68FD90712333AE2100F5EE57 /* MyPage */,
-				689589B3239E42AF00A157DD /* FinalMenu */,
-				689589C6239E91A000A157DD /* JoinNewGroup */,
 			);
 			path = Hamburger;
 			sourceTree = "<group>";
@@ -513,53 +445,44 @@
 				68F0C38B23A1070300822685 /* iTunesArtwork@3x.png in Resources */,
 				68F8C690239FFF7500FFE6C5 /* MANIFESTO.ttf in Resources */,
 				68A239CC23000BFD00F285F7 /* LaunchScreen.storyboard in Resources */,
-				689589B0239E3C3100A157DD /* icons8-メニュー2-48.png@2x.jpg in Resources */,
 				68FF6E1723124D0300DFE0E4 /* GoogleService-Info.plist in Resources */,
+				684F277524779FBC00A320CC /* menu-configration@2x.jpg in Resources */,
+				68BE300024764AA600F83314 /* tabbar-medal@2x.png in Resources */,
 				68F994C023099F0600A5898B /* icons8-水泳-50.png@2x.png in Resources */,
-				689589C0239E6FB100A157DD /* icons8-apple-app-store-100.png@2x.jpg in Resources */,
 				68F0C38423A1070300822685 /* Icon-App-60x60@3x.png in Resources */,
 				68F0C35F23A0B8FE00822685 /* tutorialImage1.PNG in Resources */,
 				68F0C38623A1070300822685 /* Icon-App-76x76@1x.png in Resources */,
 				68F0C38223A1070300822685 /* Icon-App-29x29@3x.png in Resources */,
 				68F0C35D23A0B8FE00822685 /* tutorialImage2.PNG in Resources */,
-				68D0833C23AE04E40085AD49 /* icons8-group-layouts-48.png@2x.jpg in Resources */,
-				68F994BF23099F0600A5898B /* icons8-メダル-64.png@2x.png in Resources */,
-				689589AE239E3C3100A157DD /* icons8-棒グラフ-48.png@2x.jpg in Resources */,
 				6801B0DC23AC6FDB00FBF270 /* EditDitailMenuTableViewCell.xib in Resources */,
-				689589BE239E6FB100A157DD /* icons8-メール-48.png@2x.jpg in Resources */,
-				689589C5239E8FEE00A157DD /* icons8-ユーザグループ追加-48.png@2x.jpg in Resources */,
-				688F3271232E25580072B240 /* FriendPageTableViewCell.xib in Resources */,
-				689589B7239E434F00A157DD /* FinalMenuTableViewCell.xib in Resources */,
 				68F0C38F23A1087E00822685 /* スクリーンショット 2019-12-11 19.58.58.jpeg in Resources */,
 				68F0C38123A1070300822685 /* Icon-App-20x20@2x.png in Resources */,
 				68F0C37D23A1070300822685 /* Icon-App-83.5x83.5@2x.png in Resources */,
-				689589AF239E3C3100A157DD /* icons8-設定-64.png@2x.jpg in Resources */,
 				68F0C37B23A1070300822685 /* Icon-App-40x40@1x.png in Resources */,
 				68F0C37A23A1070300822685 /* Icon-App-29x29@1x.png in Resources */,
 				68DDF717232BCC4500DAF474 /* RecordTableViewCell.xib in Resources */,
 				68F0C38023A1070300822685 /* Contents.json in Resources */,
 				68F0C35E23A0B8FE00822685 /* tutorialImage3.PNG in Resources */,
-				6801BADD232E12F900D6ED4D /* icons8-ゲスト男性-48.png@2x.png in Resources */,
 				68F0C38523A1070300822685 /* Icon-App-60x60@2x.png in Resources */,
 				680FBAC423094E2900B2B097 /* SampleTableViewCell.xib in Resources */,
 				68A239C923000BFD00F285F7 /* Assets.xcassets in Resources */,
-				689589C3239E718300A157DD /* icons8-質問する-48.png@2x.jpg in Resources */,
 				6801B0D323AB66E900FBF270 /* OutlineMenuListTableViewCell.xib in Resources */,
+				68BE2FFA247640F900F83314 /* tabbar-graph@2x.png in Resources */,
 				68F0C38A23A1070300822685 /* iTunesArtwork@2x.png in Resources */,
+				68BE2FFE247646DF00F83314 /* menu-question@2x.jpg in Resources */,
 				68F0C39123A113EC00822685 /* SignIn.storyboard in Resources */,
 				68F0C37823A1070300822685 /* iTunesArtwork@1x.png in Resources */,
+				68BE2FFC2476445300F83314 /* menu-user@2x.JPG in Resources */,
 				68F0C38823A1070300822685 /* Icon-App-29x29@2x.png in Resources */,
 				68F8C68C239FF18800FFE6C5 /* スクリーンショット 2019-12-11 0.29.10.png in Resources */,
 				68012D2E23A4A61F0000D35F /* CreatGraphTableViewCell.xib in Resources */,
 				68F0C37923A1070300822685 /* Icon-App-76x76@2x.png in Resources */,
-				68D0834323AE06D40085AD49 /* HamburgerTableViewCell.xib in Resources */,
 				68F0C37C23A1070300822685 /* Icon-App-20x20@1x.png in Resources */,
 				68F0C37E23A1070300822685 /* Icon-App-20x20@3x.png in Resources */,
 				68A239C723000BFA00F285F7 /* Main.storyboard in Resources */,
 				68F0C38323A1070300822685 /* Icon-App-40x40@2x.png in Resources */,
 				68F0C37F23A1070300822685 /* ItunesArtwork@2x.png in Resources */,
 				68F0C38723A1070300822685 /* Icon-App-40x40@3x.png in Resources */,
-				689589C1239E6FB100A157DD /* icons8-コピー-48.png@2x.jpg in Resources */,
 				689589BF239E6FB100A157DD /* icons8-twitter-(四角)-48.png@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,40 +539,35 @@
 				68F8C68E239FF49C00FFE6C5 /* RegisterViewController.swift in Sources */,
 				68A239D623000FF800F285F7 /* RecordViewController.swift in Sources */,
 				68F0C39323A12A4C00822685 /* EditOutlineMenuViewController.swift in Sources */,
-				689589B6239E434F00A157DD /* FinalMenuTableViewCell.swift in Sources */,
+				68BE3004247652A700F83314 /* HowToUseViewController.swift in Sources */,
 				68FF6E1C23127E7500DFE0E4 /* OutlineMenuListTableViewCell.swift in Sources */,
 				68012D2A23A4A0AA0000D35F /* CreatGraphViewController.swift in Sources */,
 				68F8C684239F5D6B00FFE6C5 /* SignUpViewController.swift in Sources */,
 				68FF6E2323129EC500DFE0E4 /* RecordTableViewController.swift in Sources */,
 				68DDF716232BCC4500DAF474 /* RecordTableViewCell.swift in Sources */,
 				68FF6E1923127E5D00DFE0E4 /* OutlineMenuListViewController.swift in Sources */,
-				6801B0D123AB51D900FBF270 /* MyPage.swift in Sources */,
 				6808E3DB239D3E83001C7A3C /* EditRecordViewController.swift in Sources */,
 				6801B0D523AC6F6400FBF270 /* EditDitailMenuListTableViewController.swift in Sources */,
-				68D0834223AE06D40085AD49 /* HamburgerTableViewCell.swift in Sources */,
 				68012D2823A49BF80000D35F /* EditDitailMenuViewController.swift in Sources */,
-				689589B2239E42A100A157DD /* FinalMenuViewController.swift in Sources */,
-				68FD90702333AE1200F5EE57 /* EditMyPageViewController.swift in Sources */,
-				689589C8239E920A00A157DD /* JoinNewGroupViewController.swift in Sources */,
+				68FD90702333AE1200F5EE57 /* SetValueViewController.swift in Sources */,
 				68FB02F52376868E00379D9D /* HamburgerViewController.swift in Sources */,
-				688F3270232E25580072B240 /* FriendPageTableViewCell.swift in Sources */,
 				6801B0DB23AC6FDB00FBF270 /* EditDitailMenuTableViewCell.swift in Sources */,
 				680FBAC323094E2900B2B097 /* SampleTableViewCell.swift in Sources */,
-				689589B9239E5A4100A157DD /* IntroduceViewController.swift in Sources */,
 				68049E2023AE74720060CD9C /* GraphNavigationViewController.swift in Sources */,
 				68FAF7A6232E0DB200E00239 /* GraphViewController.swift in Sources */,
 				68F8C69423A0065000FFE6C5 /* StartViewController.swift in Sources */,
 				68D0833A23ADECDA0085AD49 /* Graph.swift in Sources */,
 				68A239DA2300225100F285F7 /* OutlineMenuViewController.swift in Sources */,
 				68DDF719232BD28800DAF474 /* Record.swift in Sources */,
+				684F27772477A6C600A320CC /* SetValue.swift in Sources */,
 				68FF6E1F23127F5100DFE0E4 /* OutlineMenu.swift in Sources */,
-				68FAF7A8232E0DD300E00239 /* HomeViewController.swift in Sources */,
 				68FF6E2123129E6B00DFE0E4 /* AddMenu.swift in Sources */,
 				6801B0DE23ACB68C00FBF270 /* CreateDitailGraphViewController.swift in Sources */,
 				68A239D423000FDC00F285F7 /* TrainingViewController.swift in Sources */,
 				68012D2D23A4A61F0000D35F /* CreatGraphTableViewCell.swift in Sources */,
 				68A239C223000BFA00F285F7 /* AppDelegate.swift in Sources */,
 				68F8C686239F735700FFE6C5 /* LoginViewController.swift in Sources */,
+				6879E22423CF1252002872DF /* DateUtils.swift in Sources */,
 				680FBAC02309424000B2B097 /* AddMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,8 +17,6 @@ class OutlineMenuViewController: FormViewController {
     
     var selectedImg = UIImage()
     
-    var selectedSetValue: SetValue!
-    
     var ref: DatabaseReference!
     
     
@@ -40,12 +38,10 @@ class OutlineMenuViewController: FormViewController {
             <<< TextRow("place") {
                 $0.title = "場所"
                 $0.placeholder = "プールの名前を入力"
-                //$0.value = selectedSetValue.place
             }
             <<< SegmentedRow<String>("poolType") {
                 $0.options = ["短水路", "長水路"]
                 $0.title = "プールの長さ                        "
-                //$0.value = selectedSetValue.poolType
                 }.onChange{ row in
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(row.value, forKey: "")

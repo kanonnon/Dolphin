@@ -296,7 +296,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="twitter" destination="snj-A9-6CZ" eventType="touchDown" id="KFY-V7-CZB"/>
+                                    <action selector="twitter" destination="snj-A9-6CZ" eventType="touchDown" id="fb2-px-BWO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vc-Cb-jp9">
@@ -486,7 +486,6 @@
         <!--初期値の設定-->
         <scene sceneID="koN-cz-ldw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kzK-L6-5ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="B9h-Fn-WMZ" customClass="SetValueViewController" customModule="SwimNote" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="初期値の設定" id="9fw-bR-4Pk">
                         <barButtonItem key="leftBarButtonItem" title="戻る" id="hmc-Zl-XWG">
@@ -501,6 +500,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzK-L6-5ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4164" y="-3425"/>
         </scene>
@@ -692,7 +692,6 @@
         <!--Navigation Controller-->
         <scene sceneID="IwC-h0-ALd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i1y-Qn-kVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="59t-dU-zCY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6EF-dC-9RR">
@@ -706,6 +705,7 @@
                         <segue destination="B9h-Fn-WMZ" kind="relationship" relationship="rootViewController" id="CzW-iN-IUT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1y-Qn-kVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3225" y="-3425"/>
         </scene>
